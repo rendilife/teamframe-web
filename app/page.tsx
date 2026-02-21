@@ -37,6 +37,14 @@ export default function Home() {
         subtitle: "Souhrny • trendy • měsíční agregace",
         src: "/images/graphs_dashboard.png",
       },
+      
+      
+      
+      
+      
+      
+      
+      
       {
         id: "server",
         title: "Server Launcher",
@@ -321,6 +329,25 @@ export default function Home() {
           </Reveal>
 
           {/* 4: Graphs */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <Reveal>
             <TwoCol
               title="Incident log a prostoje (grafy)"
@@ -331,11 +358,43 @@ export default function Home() {
                 "Výpočet trvání (sekundy/minuty) a souhrny",
                 "Měsíční agregace a trendy na dashboardu",
               ]}
-              shot={shots.find((s) => s.id === "graphs")!}
-              onOpen={() => open("graphs")}
+              shot={shots.find((s) => s.id === "")!}
+              onOpen={() => open("")}
               reverse={true}
             />
           </Reveal>
+
+
+
+
+
+            <Reveal>
+              <TwoCol
+                title="Grafy proškolenosti (kvalifikace)"
+                intro="Dashboard zobrazuje přehled proškolenosti zaměstnanců podle referencí a strojů. Cílem je rychle vidět, kde je riziko – málo zaškolených lidí nebo probíhající školení."
+                bullets={[
+                  "Vizualizace stavu školení: bez školení / školení / zaškolen",
+                  "Souhrnné procento proškolenosti (oddělení / stroj / reference)",
+                  "Rychlá identifikace slabých míst v týmu",
+                  "Podklad pro plánování směn a zaškolování",
+                ]}
+                shot={shots.find((s) => s.id === "graphs")!}
+                onOpen={() => open("graphs")}
+                reverse={true}
+              />
+            </Reveal>
+
+
+
+
+
+
+
+
+
+
+
+
 
           {/* 5: Task Panel */}
           <Reveal>
