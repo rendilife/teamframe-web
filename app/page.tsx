@@ -85,6 +85,18 @@ export default function Home() {
         subtitle: "HWID • šifrované licence • DEV/PROD režim",
         src: "/images/license-system.png",
       },
+
+
+    {
+      id: "incident7h",
+      title: "Reálný incident – dlouhodobý prostoj",
+      subtitle: "Trvání v reálném čase • perzistence po restartu",
+      src: "/images/incident7h.png",
+    },
+
+
+
+
     ],
     []
   );
@@ -270,12 +282,11 @@ export default function Home() {
                   "Zobrazení v ACTIVE pohledu",
                   "Podklad pro měsíční agregace",
                 ]}
-                shot={shots.find((s) => s.id === "graphs")!}
-                onOpen={() => open("graphs")}
+                shot={shots.find((s) => s.id === "incident7h")!}
+                onOpen={() => open("incident7h")}
                 reverse={false}
               />
             </Reveal>
-
           <Reveal>
             <TwoCol
               title="Stroje, priority a provozní stavy"
