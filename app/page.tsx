@@ -258,6 +258,25 @@ export default function Home() {
           </Reveal>
 
           {/* 2: Machines */}
+
+
+
+        <Reveal>
+          <TwoCol
+            title="Reálný incident – dlouhodobý prostoj"
+            intro="Dashboard počítá prostoj na základě reálného času od změny stavu. Incident zůstává aktivní i po restartu aplikace a pokračuje ve výpočtu bez ohledu na otevření modulu."
+            bullets={[
+              "Výpočet trvání od okamžiku změny stavu",
+              "Perzistence i po restartu dashboardu",
+              "Zobrazení v ACTIVE pohledu",
+              "Podklad pro měsíční agregace",
+            ]}
+            shot={shots.find((s) => s.id === "incident7h")!}
+            onOpen={() => open("incident7h")}
+            reverse={false}
+          />
+        </Reveal>
+
           <Reveal>
             <TwoCol
               title="Stroje, priority a provozní stavy"
