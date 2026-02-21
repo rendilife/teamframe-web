@@ -348,22 +348,28 @@ export default function Home() {
 
 
 
-          <Reveal>
-            <TwoCol
-              title="Incident log a prostoje (grafy)"
-              intro="Každá změna provozního stavu stroje je incidentní záznam. Incident drží historii změn a výpočet trvání. Data lze agregovat do měsíčních statistik a trendů."
-              bullets={[
-                "Samostatný incidentní záznam pro každou událost",
-                "Historie změn stavů v rámci incidentu",
-                "Výpočet trvání (sekundy/minuty) a souhrny",
-                "Měsíční agregace a trendy na dashboardu",
-              ]}
-              shot={shots.find((s) => s.id === "")!}
-              onOpen={() => open("")}
-              reverse={true}
-            />
-          </Reveal>
+            <Reveal>
+              <section className="rounded-2xl border border-[#161B22] bg-[#0B0F14] p-10 md:p-14">
+                <div className="space-y-6">
+                  <h3 className="text-3xl font-semibold">
+                    Incident log a prostoje (připravovaný modul)
+                  </h3>
 
+                  <p className="text-[#8B949E] leading-relaxed">
+                    Modul incidentů je aktuálně ve vývoji. Bude zaznamenávat změny
+                    provozních stavů strojů a počítat trvání prostojů v reálném čase,
+                    včetně perzistence po restartu aplikace.
+                  </p>
+
+                  <ul className="text-[#8B949E] space-y-2 leading-relaxed">
+                    <li>• Samostatný incidentní záznam pro každou událost</li>
+                    <li>• Historie změn stavů v rámci incidentu</li>
+                    <li>• Výpočet trvání (sekundy/minuty)</li>
+                    <li>• Budoucí měsíční agregace a trendy</li>
+                  </ul>
+                </div>
+              </section>
+            </Reveal>
 
 
 
