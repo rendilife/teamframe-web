@@ -57,12 +57,7 @@ export default function Home() {
         subtitle: "Logy • stav • kontrolní panely",
         src: "/images/server-launcher2.png",
       },
-      {
-        id: "master",
-        title: "Master Manager",
-        subtitle: "Oprávnění • RFID/PIN • správa administrace",
-        src: "/images/master-manager.png",
-      },
+
       {
         id: "minidock",
         title: "Mini Dock",
@@ -106,49 +101,56 @@ export default function Home() {
 
 
 
+
+
+
+
+
+
+
     {
       id: "employee_manager",
       title: "Employee Manager",
-      subtitle: "Správa zaměstnanců • směnový režim • vazba na reference",
+      subtitle: "Správa zaměstnanců • směny • reference • stav",
       src: "/images/employee_manager.png",
     },
     {
       id: "machine_manager",
       title: "Machine Manager",
-      subtitle: "Správa pracovišť • priority • reference",
+      subtitle: "Správa pracovišť • konfigurace • vazby",
       src: "/images/machine_manager.png",
     },
     {
       id: "reference_manager",
       title: "Reference Manager",
-      subtitle: "Administrace výrobních referencí",
+      subtitle: "Definice referencí • vazby na stroje",
       src: "/images/reference_manager.png",
     },
     {
-      id: "qualification",
-      title: "Kvalifikace zaměstnanců",
-      subtitle: "Stav školení podle referencí",
+      id: "qualification_detail",
+      title: "Detail kvalifikací zaměstnanců",
+      subtitle: "Barevné rozlišení stavu školení",
       src: "/images/kvalifikace_zaměstnanců.png",
     },
     {
       id: "schedule_pattern",
       title: "Směnový pattern",
-      subtitle: "Oddělená logika 8h / 12h",
+      subtitle: "Definice rotační logiky 8h / 12h",
       src: "/images/schedule_patern.png",
     },
     {
-      id: "incident_graph",
-      title: "Statistika incidentů",
-      subtitle: "Agregace prostojů",
+      id: "incident_count_graph",
+      title: "Graf počtu incidentů",
+      subtitle: "Statistické vyhodnocení událostí",
       src: "/images/počet_incidentů_v_grafu.png",
     },
 
-
-
-
-
-
-
+    {
+      id: "master_manager",
+      title: "Master panel – správa mistrů / adminů",
+      subtitle: "Role • oddělení • skupiny • šifrované účty",
+      src: "/images/master-manager.png",
+    },
 
 
 
@@ -307,38 +309,6 @@ export default function Home() {
         </section>
       </Reveal>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* MODULES */}
       <section id="modules" className="px-6 py-20 border-t border-[#161B22]">
         <div className="mx-auto max-w-7xl space-y-16">
@@ -349,47 +319,6 @@ export default function Home() {
               a náhled reálného rozhraní. Text je psaný věcně, bez marketingových frází.
             </p>
           </div>
-
-
-
-
-
-
-
-
-
-            {/* 0: Master Manager */}
-            <Reveal>
-              <TwoCol
-                title="Master Manager (řízení přístupů)"
-                intro="Modul pro řízení autentizace a oprávnění. Slouží k oddělení rolí, zabezpečení přístupu a ochraně kritických částí systému."
-                bullets={[
-                  "RFID / PIN přihlášení",
-                  "Role a přístupová práva",
-                  "Oddělení produkční a vývojové logiky",
-                  "Napojení na bezpečnostní overlay",
-                ]}
-                shot={shots.find((s) => s.id === "master")!}
-                onOpen={() => open("master")}
-                reverse={false}
-              />
-            </Reveal>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           {/* 1: Planning */}
           <Reveal>
@@ -407,43 +336,6 @@ export default function Home() {
               reverse={false}
             />
           </Reveal>
-
-
-
-
-
-
-        {/* 1b: Employee Manager */}
-        <Reveal>
-          <TwoCol
-            title="Employee Manager (přehled zaměstnanců)"
-            intro="Centrální přehled zaměstnanců s filtrací, stavem směny a napojením na kvalifikace."
-            bullets={[
-              "Filtrace dle oddělení, statusu a skupiny",
-              "ACTIVE / NEXT indikace",
-              "Podpora 8h / 12h režimu",
-              "Hromadné změny směn",
-            ]}
-            shot={shots.find((s) => s.id === "employee_manager")!}
-            onOpen={() => open("employee_manager")}
-            reverse={true}
-          />
-        </Reveal>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           {/* 2: Machines */}
 
@@ -463,54 +355,6 @@ export default function Home() {
                 reverse={false}
               />
             </Reveal>
-
-
-
-
-
-            {/* 2b: Machine Manager */}
-            <Reveal>
-              <TwoCol
-                title="Machine Manager (správa pracovišť)"
-                intro="Definice strojů, jejich parametrů, priorit a vazeb na reference."
-                bullets={[
-                  "Správa seznamu pracovišť",
-                  "Nastavení priorit",
-                  "Vazba na reference",
-                  "Podklad pro směnový mozek",
-                ]}
-                shot={shots.find((s) => s.id === "machine_manager")!}
-                onOpen={() => open("machine_manager")}
-                reverse={false}
-              />
-            </Reveal>
-
-
-
-
-
-            {/* 2b: Machine Manager */}
-            <Reveal>
-              <TwoCol
-                title="Machine Manager (správa pracovišť)"
-                intro="Definice strojů, jejich parametrů, priorit a vazeb na reference."
-                bullets={[
-                  "Správa seznamu pracovišť",
-                  "Nastavení priorit",
-                  "Vazba na reference",
-                  "Podklad pro směnový mozek",
-                ]}
-                shot={shots.find((s) => s.id === "machine_manager")!}
-                onOpen={() => open("machine_manager")}
-                reverse={false}
-              />
-            </Reveal>
-
-
-
-
-
-
           <Reveal>
             <TwoCol
               title="Stroje, priority a provozní stavy"
@@ -544,30 +388,26 @@ export default function Home() {
             />
           </Reveal>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           {/* 4: Graphs */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <Reveal>
               <section className="rounded-2xl border border-[#161B22] bg-[#0B0F14] p-10 md:p-14">
                 <div className="space-y-6">
@@ -594,6 +434,55 @@ export default function Home() {
 
 
 
+
+
+            <Reveal>
+              <TwoCol
+                title="Employee Manager"
+                intro="Centrální správa zaměstnanců včetně směn, referencí a stavů. Modul umožňuje řídit dostupnost pracovníků, kvalifikace a vazby na plánování."
+                bullets={[
+                  "Evidence zaměstnanců a osobních údajů",
+                  "Přiřazení směn (8h / 12h)",
+                  "Napojení na reference a kvalifikace",
+                  "Vizualizace stavu pracovníka",
+                ]}
+                shot={shots.find((s) => s.id === "employee_manager")!}
+                onOpen={() => open("employee_manager")}
+                reverse={false}
+              />
+            </Reveal>
+
+
+
+
+
+            <Reveal>
+              <TwoCol
+                title="Master Manager (správa mistrů / adminů)"
+                intro="Modul slouží ke správě mistrů a administrátorů systému. Umožňuje definovat role, oprávnění a vazby na oddělení včetně šifrovaného uložení účtů."
+                bullets={[
+                  "Role: mistr výroby / super admin",
+                  "RFID / PIN autentizace",
+                  "Šifrované uložení účtů",
+                  "Oddělení a skupiny směn",
+                ]}
+                shot={shots.find((s) => s.id === "master_manager")!}
+                onOpen={() => open("master_manager")}
+                reverse={true}
+              />
+            </Reveal>
+
+
+
+
+
+
+
+
+
+
+
+
             <Reveal>
               <TwoCol
                 title="Grafy proškolenosti (kvalifikace)"
@@ -612,12 +501,102 @@ export default function Home() {
 
 
 
+            <Reveal>
+              <TwoCol
+                title="Graf počtu incidentů"
+                intro="Statistické vyhodnocení incidentů podle časového období. Slouží pro sledování trendů a optimalizaci provozu."
+                bullets={[
+                  "Měsíční agregace",
+                  "Trend vývoje incidentů",
+                  "Podklad pro reporting",
+                  "Napojení na incident log",
+                ]}
+                shot={shots.find((s) => s.id === "incident_count_graph")!}
+                onOpen={() => open("incident_count_graph")}
+                reverse={true}
+              />
+            </Reveal>
 
 
 
 
 
 
+
+
+
+
+
+
+            <Reveal>
+              <TwoCol
+                title="Machine Manager"
+                intro="Konfigurace pracovišť a jejich vazeb. Modul definuje strukturu výroby, referenční napojení a provozní parametry."
+                bullets={[
+                  "Správa pracovišť",
+                  "Napojení referencí na stroje",
+                  "Definice provozních parametrů",
+                  "Podklad pro plánování směn",
+                ]}
+                shot={shots.find((s) => s.id === "machine_manager")!}
+                onOpen={() => open("machine_manager")}
+                reverse={true}
+              />
+            </Reveal>
+
+
+
+            <Reveal>
+              <TwoCol
+                title="Reference Manager"
+                intro="Definice referencí a jejich vazeb na stroje. Umožňuje řídit kvalifikační strukturu napříč odděleními."
+                bullets={[
+                  "Tvorba a správa referencí",
+                  "Napojení na konkrétní pracoviště",
+                  "Vazba na zaměstnance",
+                  "Podklad pro kvalifikační grafy",
+                ]}
+                shot={shots.find((s) => s.id === "reference_manager")!}
+                onOpen={() => open("reference_manager")}
+                reverse={false}
+              />
+            </Reveal>
+
+
+
+
+            <Reveal>
+              <TwoCol
+                title="Detail kvalifikací zaměstnanců"
+                intro="Barevně rozlišený přehled školení jednotlivých zaměstnanců. Umožňuje rychle identifikovat riziková místa."
+                bullets={[
+                  "Barevné stavy školení",
+                  "Rychlá vizuální orientace",
+                  "Identifikace kritických referencí",
+                  "Podklad pro plánování",
+                ]}
+                shot={shots.find((s) => s.id === "qualification_detail")!}
+                onOpen={() => open("qualification_detail")}
+                reverse={true}
+              />
+            </Reveal>
+
+
+            <Reveal>
+              <TwoCol
+                title="Směnový pattern (rotační logika)"
+                intro="Definice rotační logiky pro 8h a 12h provoz. Oddělené režimy bez míchání struktur."
+                bullets={[
+                  "Samostatná logika 8h režimu",
+                  "Samostatná logika 12h režimu",
+                  "Rotační cykly",
+                  "Podklad pro Shift Engine",
+                ]}
+                shot={shots.find((s) => s.id === "schedule_pattern")!}
+                onOpen={() => open("schedule_pattern")}
+                reverse={false}
+              />
+            </Reveal>
 
 
 
@@ -749,31 +728,6 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       {/* CONTACT */}
       <section id="contact" className="px-6 py-16 border-t border-[#161B22]">
