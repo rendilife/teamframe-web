@@ -105,6 +105,64 @@ export default function Home() {
 
 
 
+
+    {
+      id: "employee_manager",
+      title: "Employee Manager",
+      subtitle: "Správa zaměstnanců • směnový režim • vazba na reference",
+      src: "/images/employee_manager.png",
+    },
+    {
+      id: "machine_manager",
+      title: "Machine Manager",
+      subtitle: "Správa pracovišť • priority • reference",
+      src: "/images/machine_manager.png",
+    },
+    {
+      id: "reference_manager",
+      title: "Reference Manager",
+      subtitle: "Administrace výrobních referencí",
+      src: "/images/reference_manager.png",
+    },
+    {
+      id: "qualification",
+      title: "Kvalifikace zaměstnanců",
+      subtitle: "Stav školení podle referencí",
+      src: "/images/kvalifikace_zaměstnanců.png",
+    },
+    {
+      id: "schedule_pattern",
+      title: "Směnový pattern",
+      subtitle: "Oddělená logika 8h / 12h",
+      src: "/images/schedule_patern.png",
+    },
+    {
+      id: "incident_graph",
+      title: "Statistika incidentů",
+      subtitle: "Agregace prostojů",
+      src: "/images/počet_incidentů_v_grafu.png",
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ],
     []
   );
@@ -249,6 +307,38 @@ export default function Home() {
         </section>
       </Reveal>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       {/* MODULES */}
       <section id="modules" className="px-6 py-20 border-t border-[#161B22]">
         <div className="mx-auto max-w-7xl space-y-16">
@@ -259,6 +349,47 @@ export default function Home() {
               a náhled reálného rozhraní. Text je psaný věcně, bez marketingových frází.
             </p>
           </div>
+
+
+
+
+
+
+
+
+
+            {/* 0: Master Manager */}
+            <Reveal>
+              <TwoCol
+                title="Master Manager (řízení přístupů)"
+                intro="Modul pro řízení autentizace a oprávnění. Slouží k oddělení rolí, zabezpečení přístupu a ochraně kritických částí systému."
+                bullets={[
+                  "RFID / PIN přihlášení",
+                  "Role a přístupová práva",
+                  "Oddělení produkční a vývojové logiky",
+                  "Napojení na bezpečnostní overlay",
+                ]}
+                shot={shots.find((s) => s.id === "master")!}
+                onOpen={() => open("master")}
+                reverse={false}
+              />
+            </Reveal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           {/* 1: Planning */}
           <Reveal>
@@ -276,6 +407,43 @@ export default function Home() {
               reverse={false}
             />
           </Reveal>
+
+
+
+
+
+
+        {/* 1b: Employee Manager */}
+        <Reveal>
+          <TwoCol
+            title="Employee Manager (přehled zaměstnanců)"
+            intro="Centrální přehled zaměstnanců s filtrací, stavem směny a napojením na kvalifikace."
+            bullets={[
+              "Filtrace dle oddělení, statusu a skupiny",
+              "ACTIVE / NEXT indikace",
+              "Podpora 8h / 12h režimu",
+              "Hromadné změny směn",
+            ]}
+            shot={shots.find((s) => s.id === "employee_manager")!}
+            onOpen={() => open("employee_manager")}
+            reverse={true}
+          />
+        </Reveal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           {/* 2: Machines */}
 
@@ -295,6 +463,54 @@ export default function Home() {
                 reverse={false}
               />
             </Reveal>
+
+
+
+
+
+            {/* 2b: Machine Manager */}
+            <Reveal>
+              <TwoCol
+                title="Machine Manager (správa pracovišť)"
+                intro="Definice strojů, jejich parametrů, priorit a vazeb na reference."
+                bullets={[
+                  "Správa seznamu pracovišť",
+                  "Nastavení priorit",
+                  "Vazba na reference",
+                  "Podklad pro směnový mozek",
+                ]}
+                shot={shots.find((s) => s.id === "machine_manager")!}
+                onOpen={() => open("machine_manager")}
+                reverse={false}
+              />
+            </Reveal>
+
+
+
+
+
+            {/* 2b: Machine Manager */}
+            <Reveal>
+              <TwoCol
+                title="Machine Manager (správa pracovišť)"
+                intro="Definice strojů, jejich parametrů, priorit a vazeb na reference."
+                bullets={[
+                  "Správa seznamu pracovišť",
+                  "Nastavení priorit",
+                  "Vazba na reference",
+                  "Podklad pro směnový mozek",
+                ]}
+                shot={shots.find((s) => s.id === "machine_manager")!}
+                onOpen={() => open("machine_manager")}
+                reverse={false}
+              />
+            </Reveal>
+
+
+
+
+
+
           <Reveal>
             <TwoCol
               title="Stroje, priority a provozní stavy"
@@ -328,26 +544,30 @@ export default function Home() {
             />
           </Reveal>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           {/* 4: Graphs */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <Reveal>
               <section className="rounded-2xl border border-[#161B22] bg-[#0B0F14] p-10 md:p-14">
                 <div className="space-y-6">
@@ -529,6 +749,31 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* CONTACT */}
       <section id="contact" className="px-6 py-16 border-t border-[#161B22]">
