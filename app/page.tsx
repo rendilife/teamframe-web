@@ -98,7 +98,12 @@ export default function Home() {
     },
 
 
-
+    {
+      id: "incident_dashboard",
+      title: "Incident Dashboard",
+      subtitle: "Živý feed incidentů • směna / den / týden / měsíc • stránkování",
+      src: "/images/incident_dashboard.png",
+    },
 
 
 
@@ -408,31 +413,50 @@ export default function Home() {
 
 
 
-            <Reveal>
-              <section className="rounded-2xl border border-[#161B22] bg-[#0B0F14] p-10 md:p-14">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-semibold">
-                    Incident log a prostoje (připravovaný modul)
-                  </h3>
+                <Reveal>
+                  <section className="rounded-2xl border border-[#161B22] bg-[#0B0F14] p-10 md:p-14">
+                    <div className="space-y-6">
+                      <h3 className="text-3xl font-semibold">
+                        Incident Engine a výpočet prostojů
+                      </h3>
 
-                  <p className="text-[#8B949E] leading-relaxed">
-                    Modul incidentů je aktuálně ve vývoji. Bude zaznamenávat změny
-                    provozních stavů strojů a počítat trvání prostojů v reálném čase,
-                    včetně perzistence po restartu aplikace.
-                  </p>
+                      <p className="text-[#8B949E] leading-relaxed">
+                        Incident Dashboard je postavený nad interním Incident Engine.
+                        Ten zaznamenává změny provozních stavů strojů, drží historii událostí
+                        a počítá trvání prostojů v reálném čase včetně perzistence po restartu systému.
+                      </p>
 
-                  <ul className="text-[#8B949E] space-y-2 leading-relaxed">
-                    <li>• Samostatný incidentní záznam pro každou událost</li>
-                    <li>• Historie změn stavů v rámci incidentu</li>
-                    <li>• Výpočet trvání (sekundy/minuty)</li>
-                    <li>• Budoucí měsíční agregace a trendy</li>
-                  </ul>
-                </div>
-              </section>
-            </Reveal>
+                      <ul className="text-[#8B949E] space-y-2 leading-relaxed">
+                        <li>• Samostatný incidentní záznam pro každou změnu stavu</li>
+                        <li>• Historie změn v rámci jedné události</li>
+                        <li>• Výpočet trvání od okamžiku změny (sekundy/minuty/hodiny)</li>
+                        <li>• Podklad pro měsíční agregace a statistické grafy</li>
+                      </ul>
+
+                      <p className="text-[#6B7280] text-sm">
+                        Vizualizační vrstva (Incident Dashboard) je hotová. Engine část se dále rozšiřuje o logičtější klasifikaci důvodů incidentů.
+                      </p>
+                    </div>
+                  </section>
+                </Reveal>
 
 
-
+                <Reveal>
+                  <TwoCol
+                    title="Incident Dashboard (živý feed událostí)"
+                    intro="Dashboard zobrazuje incidenty jako barevné karty podle typu události. Směnový režim ukazuje poslední incidenty aktuální směny, den/týden/měsíc slouží pro rychlý přehled a trendové kontroly. Ovládání je dělané pro halu: klávesy, fullscreen a stránkování bez klikání."
+                    bullets={[
+                      "Barevné karty s gradientem podle typu incidentu + ikony",
+                      "F1 Den / F2 Týden / F3 Měsíc / F4 Směna (8h)",
+                      "SHIFT režim = rychlý feed aktuální směny (bez stránkování)",
+                      "DAY/WEEK/MONTH = stránkování + auto-page (PgUp/PgDn, Space pauza)",
+                      "Oddělení přepínáš šipkami ←/→, R refresh, F11 fullscreen",
+                    ]}
+                    shot={shots.find((s) => s.id === "incident_dashboard")!}
+                    onOpen={() => open("incident_dashboard")}
+                    reverse={false}
+                  />
+                </Reveal>
 
 
 
