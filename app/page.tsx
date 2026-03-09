@@ -209,10 +209,15 @@ export default function Home() {
               <a className="hover:text-white transition" href="#modules">Moduly</a>
               <a className="hover:text-white transition" href="#security">Bezpečnost</a>
               <a className="hover:text-white transition" href="#license">Licence</a>
+              <a className="hover:text-white transition" href="/updates">Změny</a>
+              <a className="hover:text-white transition" href="/roadmap">Roadmap</a>
+              <a className="hover:text-white transition" href="/docs">Docs</a>
+              <a className="hover:text-white transition" href="/download">Download</a>
 
-              <a className="hover:text-white transition" href="/updates">
-                Změny
-              </a>
+
+
+
+
 
               <a className="hover:text-white transition" href="#contact">Kontakt</a>
             </nav>
