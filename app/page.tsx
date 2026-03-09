@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Reveal from "./components/Reveal";
+import Reveal from "@/app/components/Reveal";
 
 
 
