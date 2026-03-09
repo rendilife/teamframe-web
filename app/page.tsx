@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import Reveal from "./components/Reveal";
 
+
+
 type Shot = {
   id: string;
   title: string;
@@ -175,6 +177,8 @@ export default function Home() {
   );
 
   const [lightbox, setLightbox] = useState<Shot | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   // ESC zavře lightbox
   useEffect(() => {
@@ -199,28 +203,58 @@ export default function Home() {
             Team<span className="text-[#00B3A4]">Frame</span>
           </div>
 
-          <nav className="hidden md:flex gap-6 text-sm text-[#8B949E]">
-            <a className="hover:text-white transition" href="#overview">
-              Přehled
-            </a>
-            <a className="hover:text-white transition" href="#architecture">
-              Architektura
-            </a>
-            <a className="hover:text-white transition" href="#modules">
-              Moduly
-            </a>
-            <a className="hover:text-white transition" href="#security">
-              Bezpečnost
-            </a>
-            <a className="hover:text-white transition" href="#license">
-              Licence
-            </a>
-            <a className="hover:text-white transition" href="#contact">
-              Kontakt
-            </a>
-          </nav>
+            <nav className="hidden md:flex gap-6 text-sm text-[#8B949E]">
+              <a className="hover:text-white transition" href="#overview">Přehled</a>
+              <a className="hover:text-white transition" href="#architecture">Architektura</a>
+              <a className="hover:text-white transition" href="#modules">Moduly</a>
+              <a className="hover:text-white transition" href="#security">Bezpečnost</a>
+              <a className="hover:text-white transition" href="#license">Licence</a>
+
+              <a className="hover:text-white transition" href="/updates">
+                Změny
+              </a>
+
+              <a className="hover:text-white transition" href="#contact">Kontakt</a>
+            </nav>
+
+
+            <button
+              className="md:hidden text-white text-xl"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              ☰
+            </button>
+
+
+
+
+
+
+
+
         </div>
+
+
+
+        {menuOpen && (
+          <div className="md:hidden border-t border-[#161B22] bg-[#0E1117] px-6 py-4 flex flex-col gap-4 text-[#8B949E]">
+            <a href="#overview" onClick={() => setMenuOpen(false)}>Přehled</a>
+            <a href="#architecture" onClick={() => setMenuOpen(false)}>Architektura</a>
+            <a href="#modules" onClick={() => setMenuOpen(false)}>Moduly</a>
+            <a href="/updates" onClick={() => setMenuOpen(false)}>Změny</a>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>Kontakt</a>
+            <a href="#license" onClick={() => setMenuOpen(false)}>Licence</a>
+          </div>
+        )}
+
       </header>
+
+
+
+
+
+
+
 
       {/* HERO */}
       <section className="px-6 pt-20 pb-24" id="overview">
