@@ -290,17 +290,17 @@ export default function Home() {
                   Team<span className="text-[#00B3A4]">Frame</span>
                 </h1>
 
-                <p className="text-lg text-[#8B949E] leading-relaxed">
-                  TeamFrame je modulární systém pro plánování směn, řízení strojů,
-                  práci s kvalifikacemi zaměstnanců a evidenci incidentů včetně výpočtů trvání
-                  a agregací prostojů.
-                </p>
+                    <p className="text-lg text-[#8B949E] leading-relaxed">
+                      TeamFrame je modulární systém pro řízení výrobního provozu. Umožňuje plánování směn,
+                      správu strojů, práci s kvalifikacemi zaměstnanců a evidenci incidentů včetně analýzy
+                      prostojů a jejich trvání.
+                    </p>
 
-                <p className="text-lg text-[#8B949E] leading-relaxed">
-                  Nasazení cílí na interní firemní prostředí. Provoz je postavený na klientovi,
-                  serverové části a samostatném dashboardu určeném pro velké obrazovky.
-                </p>
-
+                    <p className="text-lg text-[#8B949E] leading-relaxed">
+                      Systém je navržen pro interní firemní prostředí a je postaven na třech hlavních částech:
+                      desktopovém klientovi pro správu dat, serverové části zajišťující logiku a ukládání dat
+                      a samostatném dashboardu určeném pro velké obrazovky ve výrobě.
+                    </p>
                 <div className="flex flex-wrap gap-3 text-sm text-[#8B949E]">
                   <Badge>8h / 12h režimy</Badge>
                   <Badge>ACTIVE / NEXT</Badge>
