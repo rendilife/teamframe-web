@@ -5,7 +5,7 @@ import Reveal from "@/app/components/Reveal";
 
 
 
-import { useEffect, useState } from "react";
+
 
 const sections = [
   "overview",
@@ -17,7 +17,7 @@ const sections = [
   "docs",
 ];
 
-export default function SectionSpy() {
+  function SectionSpy() {
   const [active, setActive] = useState("");
 
   useEffect(() => {
