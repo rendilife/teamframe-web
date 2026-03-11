@@ -228,7 +228,12 @@ export default function Home() {
 
 
 
-
+{
+  id: "changeover_audit",
+  title: "Auditní panel přehozů",
+  subtitle: "Kontrola historie operací • detail záznamu přehozu",
+  src: "/images/auditni_zona_pro_mistra.png",
+},
 
 
 
@@ -415,75 +420,73 @@ export default function Home() {
         </Reveal>
 
 
-        <Reveal>
-          <TwoCol
-            title="Průběh přehozu"
-            intro="Operátor nebo mistr může zahájit přehoz přímo v systému. Od tohoto okamžiku se počítá reálný čas operace. Po dokončení je možné potvrdit hotovo a případně uvést důvod zpoždění."
-            bullets={[
-              "Start přehozu jedním kliknutím",
-              "Automatické měření času",
-              "Potvrzení dokončení",
-              "Evidence zpoždění a důvodů",
-            ]}
-            shot={shots.find((s) => s.id === "changeover_start")!}
-            onOpen={() => open("changeover_start")}
-            reverse={true}
-          />
-        </Reveal>
-
-
-
-
 <Reveal>
-<TwoCol
-title="Naplánování přehozu"
-intro="Přehoz je možné naplánovat dopředu přímo v systému. Operátor nebo mistr vybere stroj, cílovou referenci a plánovaný čas změny výroby."
-bullets={[
-"Výběr stroje",
-"Výběr nové reference",
-"Naplánování času změny výroby",
-"Zobrazení v přehledu přehozů",
-]}
-shot={shots.find((s) => s.id === "changeover_dialog")!}
-onOpen={() => open("changeover_dialog")}
-reverse={false}
-/>
+  <TwoCol
+    title="Průběh přehozu"
+    intro="Seřizovač zahajuje přehoz přímo v systému podle naplánované změny výroby. Od tohoto okamžiku systém měří reálné trvání operace a zobrazuje průběh přehozu."
+    bullets={[
+      "Spuštění přehozu seřizovačem",
+      "Automatické měření času operace",
+      "Vizualizace průběhu přehozu",
+      "Napojení na stav stroje",
+    ]}
+    shot={shots.find((s) => s.id === "changeover_start")!}
+    onOpen={() => open("changeover_start")}
+    reverse={true}
+  />
 </Reveal>
 
 
 
+
 <Reveal>
-<TwoCol
-title="Stav přehozu"
-intro="Po zahájení operace systém sleduje průběh přehozu. Operátor i mistr vidí aktuální stav a zbývající čas operace."
-bullets={[
-"Zobrazení aktuálního stavu",
-"Měření trvání operace",
-"Vizualizace průběhu přehozu",
-"Integrace se stavem stroje",
-]}
-shot={shots.find((s) => s.id === "changeover_status")!}
-onOpen={() => open("changeover_status")}
-reverse={true}
-/>
+  <TwoCol
+    title="Naplánování přehozu"
+    intro="Přehozy plánuje mistr výroby nebo administrátor systému. Vybere stroj, cílovou referenci a plánovaný čas změny výroby. Naplánovaný přehoz se následně zobrazí v přehledu přehozů a na výrobním dashboardu."
+    bullets={[
+      "Plánování přehozu mistrem nebo administrátorem",
+      "Výběr stroje a nové reference",
+      "Definice plánovaného času změny výroby",
+      "Automatické zobrazení v přehledu přehozů",
+    ]}
+    shot={shots.find((s) => s.id === "changeover_dialog")!}
+    onOpen={() => open("changeover_dialog")}
+    reverse={false}
+  />
 </Reveal>
 
 
+<Reveal>
+  <TwoCol
+    title="Stav přehozu"
+    intro="Po zahájení přehozu systém sleduje průběh operace a zobrazuje aktuální stav i její trvání. Informace jsou dostupné přímo v modulu přehozů i na dashboardu."
+    bullets={[
+      "Zobrazení aktuálního stavu přehozu",
+      "Měření trvání operace",
+      "Vizualizace průběhu změny výroby",
+      "Integrace se stavem stroje",
+    ]}
+    shot={shots.find((s) => s.id === "changeover_status")!}
+    onOpen={() => open("changeover_status")}
+    reverse={true}
+  />
+</Reveal>
+
 
 <Reveal>
-<TwoCol
-title="Evidence zpoždění"
-intro="Pokud přehoz trvá déle než plánovaný čas, je možné zadat důvod zpoždění. Data lze později použít pro analýzu výrobních problémů."
-bullets={[
-"Zadání důvodu prodloužení",
-"Klasifikace problému",
-"Podklad pro analýzu výroby",
-"Součást historie přehozů",
-]}
-shot={shots.find((s) => s.id === "changeover_reason")!}
-onOpen={() => open("changeover_reason")}
-reverse={false}
-/>
+  <TwoCol
+    title="Evidence zpoždění"
+    intro="Pokud přehoz trvá déle než plánovaný čas, může seřizovač při dokončení uvést důvod prodloužení operace. Tyto informace slouží jako podklad pro analýzu výrobních problémů."
+    bullets={[
+      "Zadání důvodu prodloužení přehozu",
+      "Klasifikace problému",
+      "Podklad pro analýzu výroby",
+      "Součást historie přehozů",
+    ]}
+    shot={shots.find((s) => s.id === "changeover_reason")!}
+    onOpen={() => open("changeover_reason")}
+    reverse={false}
+  />
 </Reveal>
 
 
@@ -508,36 +511,36 @@ reverse={true}
 
 
 <Reveal>
-<TwoCol
-title="Status bar přehozů"
-intro="Dashboard obsahuje status bar zobrazující aktivní přehozy a jejich stav. Operátoři tak mají okamžitý přehled o probíhajících změnách výroby."
-bullets={[
-"Rychlá informace o přehozech",
-"Vizualizace přímo na dashboardu",
-"Přehled pro směnu",
-]}
-shot={shots.find((s) => s.id === "changeover_statusbar")!}
-onOpen={() => open("changeover_statusbar")}
-reverse={false}
-/>
+  <TwoCol
+    title="Status bar přehozů"
+    intro="Dashboard obsahuje status bar zobrazující aktivní přehozy a jejich stav. Směna tak má okamžitý přehled o probíhajících změnách výroby."
+    bullets={[
+      "Rychlá informace o aktivních přehozech",
+      "Vizualizace přímo na dashboardu",
+      "Přehled změn výroby pro směnu",
+    ]}
+    shot={shots.find((s) => s.id === "changeover_statusbar")!}
+    onOpen={() => open("changeover_statusbar")}
+    reverse={false}
+  />
 </Reveal>
 
 
 
 
 <Reveal>
-<TwoCol
-title="Dokončení přehozu"
-intro="Po dokončení operace operátor potvrdí hotovo. Systém uloží reálný čas přehozu do historie."
-bullets={[
-"Potvrzení dokončení",
-"Uložení reálného času",
-"Zápis do historie přehozů",
-]}
-shot={shots.find((s) => s.id === "changeover_finish")!}
-onOpen={() => open("changeover_finish")}
-reverse={true}
-/>
+  <TwoCol
+    title="Dokončení přehozu"
+    intro="Po dokončení práce seřizovač potvrdí ukončení přehozu. Systém uloží reálný čas operace a případné zpoždění do historie."
+    bullets={[
+      "Potvrzení dokončení přehozu",
+      "Uložení reálného času operace",
+      "Zápis do historie přehozů",
+    ]}
+    shot={shots.find((s) => s.id === "changeover_finish")!}
+    onOpen={() => open("changeover_finish")}
+    reverse={true}
+  />
 </Reveal>
 
 
@@ -581,6 +584,38 @@ reverse={true}
             reverse={true}
           />
         </Reveal>
+
+
+
+
+
+<Reveal>
+  <TwoCol
+    title="Auditní editor přehozů"
+    intro="Administrativní nástroj pro práci s auditními záznamy přehozů. Modul umožňuje otevřít uložené logy operací a ručně upravit jejich hodnoty v případě chyb, výpadků systému nebo nekonzistence dat."
+    bullets={[
+      "Ruční úprava auditních záznamů přehozů",
+      "Diagnostika problémů v datech",
+      "Úprava časů operace (start / konec)",
+      "Oprava důvodů zpoždění a metadat operace",
+    ]}
+    shot={shots.find((s) => s.id === "changeover_audit")!}
+    onOpen={() => open("changeover_audit")}
+    reverse={false}
+  />
+</Reveal>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
