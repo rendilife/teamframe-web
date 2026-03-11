@@ -307,56 +307,6 @@ export default function Home() {
 
 
 
-<Reveal>
-  <section className="max-w-6xl mx-auto py-20 px-6">
-
-    <h2 className="text-3xl font-semibold mb-6">
-      Architektura systému
-    </h2>
-
-    <p className="text-[#8B949E] mb-12 max-w-3xl">
-      TeamFrame je postaven na třívrstvé architektuře. 
-      Klientská aplikace slouží pro práci s daty, server zajišťuje logiku
-      a ukládání informací a samostatný dashboard zobrazuje stav výroby
-      na velkých obrazovkách ve výrobním prostoru.
-    </p>
-
-    <div className="grid md:grid-cols-3 gap-8">
-
-      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
-        <h3 className="text-xl font-semibold mb-2">
-          TeamFrame Client
-        </h3>
-        <p className="text-[#8B949E]">
-          Desktopová aplikace určená pro plánování směn, správu zaměstnanců,
-          konfiguraci strojů a práci s výrobními daty.
-        </p>
-      </div>
-
-      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
-        <h3 className="text-xl font-semibold mb-2">
-          TeamFrame Server
-        </h3>
-        <p className="text-[#8B949E]">
-          Serverová část zajišťující zpracování dat, bezpečnost,
-          ukládání informací a komunikaci mezi jednotlivými moduly systému.
-        </p>
-      </div>
-
-      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
-        <h3 className="text-xl font-semibold mb-2">
-          TeamFrame Dashboard
-        </h3>
-        <p className="text-[#8B949E]">
-          Vizualizační vrstva určená pro velké obrazovky ve výrobě,
-          která zobrazuje aktuální stav provozu a plánované operace.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-</Reveal>
 
 
 
@@ -436,6 +386,75 @@ export default function Home() {
           </div>
         </section>
       </Reveal>
+
+
+
+<Reveal>
+  <section className="max-w-6xl mx-auto py-20 px-6">
+
+    <h2 className="text-3xl font-semibold mb-6">
+      Architektura systému
+    </h2>
+
+    <p className="text-[#8B949E] mb-12 max-w-3xl">
+      TeamFrame je postaven na třívrstvé architektuře. 
+      Klientská aplikace slouží pro práci s daty, server zajišťuje logiku
+      a ukládání informací a samostatný dashboard zobrazuje stav výroby
+      na velkých obrazovkách ve výrobním prostoru.
+    </p>
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+        <h3 className="text-xl font-semibold mb-2">
+          TeamFrame Client
+        </h3>
+        <p className="text-[#8B949E]">
+          Desktopová aplikace určená pro plánování směn, správu zaměstnanců,
+          konfiguraci strojů a práci s výrobními daty.
+        </p>
+      </div>
+
+      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+        <h3 className="text-xl font-semibold mb-2">
+          TeamFrame Server
+        </h3>
+        <p className="text-[#8B949E]">
+          Serverová část zajišťující zpracování dat, bezpečnost,
+          ukládání informací a komunikaci mezi jednotlivými moduly systému.
+        </p>
+      </div>
+
+      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+        <h3 className="text-xl font-semibold mb-2">
+          TeamFrame Dashboard
+        </h3>
+        <p className="text-[#8B949E]">
+          Vizualizační vrstva určená pro velké obrazovky ve výrobě,
+          která zobrazuje aktuální stav provozu a plánované operace.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+</Reveal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* MODULES */}
       <section id="modules" className="px-6 py-20 border-t border-[#161B22]">
