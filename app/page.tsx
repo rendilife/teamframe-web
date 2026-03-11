@@ -447,7 +447,92 @@ Vizualizace stavu výroby a plánovaných operací.
 
 
 
+<Reveal>
+<section id="usecases" className="px-6 py-20 border-t border-[#161B22]">
 
+  <div className="mx-auto max-w-7xl space-y-14">
+
+    <div className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-semibold">
+        Pro koho je TeamFrame
+      </h2>
+
+      <p className="text-[#8B949E] text-lg leading-relaxed max-w-4xl">
+        TeamFrame je navržen pro výrobní provozy, které potřebují řídit směny,
+        pracoviště, kvalifikace zaměstnanců a plánované operace ve výrobě.
+        Systém je vhodný zejména pro vícesměnné provozy, kde je potřeba mít
+        přehled o aktuálním stavu výroby a plánovaných změnách.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+        <h3 className="text-lg font-semibold mb-2">
+          Výrobní firmy
+        </h3>
+        <p className="text-[#8B949E] text-sm">
+          Provozy s větším počtem strojů a zaměstnanců,
+          kde je potřeba koordinovat výrobu a směny.
+        </p>
+      </div>
+
+      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+        <h3 className="text-lg font-semibold mb-2">
+          Vícesměnné provozy
+        </h3>
+        <p className="text-[#8B949E] text-sm">
+          Podpora plánování směn v režimech 8h i 12h,
+          včetně rotací zaměstnanců a přehledu směn.
+        </p>
+      </div>
+
+      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+        <h3 className="text-lg font-semibold mb-2">
+          Automotive výroba
+        </h3>
+        <p className="text-[#8B949E] text-sm">
+          Prostředí s vysokými nároky na organizaci výroby,
+          plánování operací a kontrolu prostojů.
+        </p>
+      </div>
+
+      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+        <h3 className="text-lg font-semibold mb-2">
+          Provozy s častými přehozy
+        </h3>
+        <p className="text-[#8B949E] text-sm">
+          Evidence plánovaných přehozů, jejich průběhu
+          a vyhodnocení zpoždění nebo prostojů.
+        </p>
+      </div>
+
+      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+        <h3 className="text-lg font-semibold mb-2">
+          Digitální řízení výroby
+        </h3>
+        <p className="text-[#8B949E] text-sm">
+          Přehled o aktuálním stavu provozu
+          na dashboardech umístěných přímo ve výrobě.
+        </p>
+      </div>
+
+      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+        <h3 className="text-lg font-semibold mb-2">
+          Interní firemní systémy
+        </h3>
+        <p className="text-[#8B949E] text-sm">
+          TeamFrame běží na interním serveru firmy
+          a je navržen pro bezpečný provoz uvnitř sítě.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+</Reveal>
 
 
 
