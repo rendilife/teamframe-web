@@ -348,7 +348,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl space-y-14">
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-semibold">
-                Architektura systému
+                Součásti systému
               </h2>
               <p className="text-[#8B949E] text-lg leading-relaxed max-w-4xl">
                 TeamFrame je rozdělen do tří částí. Klient zajišťuje řízení lidí, strojů, referencí a úkolů.
