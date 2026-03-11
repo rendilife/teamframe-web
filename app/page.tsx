@@ -485,7 +485,7 @@ Správa výroby, zaměstnanců, strojů a plánování směn.
 </p>
 </div>
 
-<div className="text-3xl text-[#6B7280]">
+<div className="hidden md:block text-3xl text-[#6B7280]">
 →
 </div>
 
@@ -520,7 +520,7 @@ Vizualizace stavu výroby a plánovaných operací.
 
 
 
-<Reveal>
+
 
 
 
