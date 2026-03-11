@@ -521,6 +521,108 @@ Vizualizace stavu výroby a plánovaných operací.
 
 
 <Reveal>
+
+
+
+
+
+
+
+
+
+
+<Reveal>
+<section className="px-6 py-20 border-t border-[#161B22]">
+
+<div className="mx-auto max-w-7xl space-y-14">
+
+<div className="space-y-4">
+<h2 className="text-3xl md:text-4xl font-semibold">
+Proč vznikl TeamFrame
+</h2>
+
+<p className="text-[#8B949E] text-lg leading-relaxed max-w-4xl">
+TeamFrame vznikl jako interní nástroj pro řízení výrobního provozu.
+Cílem bylo vytvořit systém, který spojuje plánování směn, řízení strojů,
+kvalifikace zaměstnanců a evidenci incidentů do jednoho prostředí.
+</p>
+</div>
+
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+<h3 className="text-lg font-semibold mb-2">
+Jedno místo pro řízení výroby
+</h3>
+<p className="text-[#8B949E] text-sm">
+Plánování směn, správa strojů, kvalifikace zaměstnanců
+a incidenty jsou sjednoceny v jednom systému.
+</p>
+</div>
+
+<div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+<h3 className="text-lg font-semibold mb-2">
+Reálný stav výroby
+</h3>
+<p className="text-[#8B949E] text-sm">
+Dashboard zobrazuje aktuální stav strojů,
+incidenty a plánované operace přímo ve výrobní hale.
+</p>
+</div>
+
+<div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+<h3 className="text-lg font-semibold mb-2">
+Interní firemní systém
+</h3>
+<p className="text-[#8B949E] text-sm">
+TeamFrame běží na interním serveru firmy
+a není závislý na externích cloudových službách.
+</p>
+</div>
+
+<div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+<h3 className="text-lg font-semibold mb-2">
+Podpora vícesměnného provozu
+</h3>
+<p className="text-[#8B949E] text-sm">
+Systém podporuje směnové režimy 8h i 12h
+včetně rotačních patternů a plánování kapacit.
+</p>
+</div>
+
+<div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+<h3 className="text-lg font-semibold mb-2">
+Evidence přehozů
+</h3>
+<p className="text-[#8B949E] text-sm">
+Plánování, sledování a vyhodnocení přehozů
+včetně reálného trvání operací.
+</p>
+</div>
+
+<div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+<h3 className="text-lg font-semibold mb-2">
+Analýza prostojů
+</h3>
+<p className="text-[#8B949E] text-sm">
+Incident engine ukládá historii událostí
+a umožňuje analyzovat prostoj výroby.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+</Reveal>
+
+
+
+
+
+
+
 <section id="usecases" className="px-6 py-20 border-t border-[#161B22]">
 
   <div className="mx-auto max-w-7xl space-y-14">
