@@ -5,6 +5,71 @@ import Reveal from "@/app/components/Reveal";
 
 
 
+import { useEffect, useState } from "react";
+
+const sections = [
+  "overview",
+  "architecture",
+  "usecases",
+  "modules",
+  "security",
+  "license",
+  "docs",
+];
+
+export default function SectionSpy() {
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return active;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 type Shot = {
   id: string;
   title: string;
