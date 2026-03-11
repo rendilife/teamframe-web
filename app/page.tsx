@@ -78,14 +78,14 @@ type Shot = {
 
 export default function Home() {
 
-export default function Home() {
+
 
   const activeSection = SectionSpy();
 
   const shots: Shot[] = useMemo(
 
 
-  const shots: Shot[] = useMemo(
+
     () => [
       {
         id: "tv",
