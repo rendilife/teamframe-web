@@ -496,7 +496,7 @@ Zpracování dat, logika systému a ukládání informací.
 </p>
 </div>
 
-<div className="text-3xl text-[#6B7280]">
+<div className="hidden md:block text-3xl text-[#6B7280]">
 →
 </div>
 
