@@ -622,7 +622,7 @@ a umožňuje analyzovat prostoj výroby.
 
 
 
-
+<Reveal>
 <section id="usecases" className="px-6 py-20 border-t border-[#161B22]">
 
   <div className="mx-auto max-w-7xl space-y-14">
