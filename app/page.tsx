@@ -69,7 +69,6 @@ const sections = [
 
 
 
-
 type Shot = {
   id: string;
   title: string;
@@ -78,6 +77,14 @@ type Shot = {
 };
 
 export default function Home() {
+
+export default function Home() {
+
+  const activeSection = SectionSpy();
+
+  const shots: Shot[] = useMemo(
+
+
   const shots: Shot[] = useMemo(
     () => [
       {
@@ -336,7 +343,43 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0E1117] text-[#E6EDF3]">
+<main className="min-h-screen bg-[#0E1117] text-[#E6EDF3] pt-16">
+
+<nav className="fixed top-0 left-0 right-0 bg-[#0E1117]/90 backdrop-blur border-b border-[#161B22] z-40">
+  <div className="max-w-7xl mx-auto px-6 h-14 flex items-center gap-6 text-sm">
+
+    <a href="#overview"
+      className={activeSection === "overview" ? "text-white" : "text-[#6B7280]"}>
+      Overview
+    </a>
+
+    <a href="#architecture"
+      className={activeSection === "architecture" ? "text-white" : "text-[#6B7280]"}>
+      Architecture
+    </a>
+
+    <a href="#usecases"
+      className={activeSection === "usecases" ? "text-white" : "text-[#6B7280]"}>
+      Use cases
+    </a>
+
+    <a href="#modules"
+      className={activeSection === "modules" ? "text-white" : "text-[#6B7280]"}>
+      Modules
+    </a>
+
+    <a href="#security"
+      className={activeSection === "security" ? "text-white" : "text-[#6B7280]"}>
+      Security
+    </a>
+
+    <a href="#license"
+      className={activeSection === "license" ? "text-white" : "text-[#6B7280]"}>
+      License
+    </a>
+
+  </div>
+</nav>
 
 
 
