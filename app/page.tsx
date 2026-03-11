@@ -164,6 +164,77 @@ export default function Home() {
 
 
 
+    {
+      id: "planned_changeovers",
+      title: "Plánované přehozy",
+      subtitle: "Přehled naplánovaných změn referencí",
+      src: "/images/planovane_prehozy.png",
+    },
+    {
+      id: "finished_changeovers",
+      title: "Hotové přehozy",
+      subtitle: "Historie dokončených přehozů",
+      src: "/images/hotove_prehozy.png",
+    },
+    {
+      id: "changeover_dialog",
+      title: "Naplánování přehozu",
+      subtitle: "Dialog pro zadání plánovaného přehozu",
+      src: "/images/dialog_naplanovat.png",
+    },
+    {
+      id: "changeover_start",
+      title: "Zahájení přehozu",
+      subtitle: "Potvrzení zahájení práce na přehozu",
+      src: "/images/start_přehozu.png",
+    },
+    {
+      id: "changeover_status",
+      title: "Stav přehozu",
+      subtitle: "Průběh a aktuální stav operace",
+      src: "/images/status_prehozu.png",
+    },
+    {
+      id: "changeover_reason",
+      title: "Důvod zpoždění",
+      subtitle: "Evidence důvodu prodloužení přehozu",
+      src: "/images/důvod_zpoždění.png",
+    },
+    {
+      id: "changeover_tv",
+      title: "Přehozy na TV Dashboardu",
+      subtitle: "Vizualizace plánovaných změn na hale",
+      src: "/images/tv_dashoboard_prehoz.png",
+    },
+    {
+      id: "machine_next_ref",
+      title: "Next reference ve strojích",
+      subtitle: "Příprava další výroby přímo ve správě strojů",
+      src: "/images/vylepseny_machine_manager_next_ref.png",
+    },
+    {
+      id: "changeover_statusbar",
+      title: "Status bar přehozů",
+      subtitle: "Rychlá informace o plánovaných změnách",
+      src: "/images/statusbar_tv_dashboard.png",
+    },
+    {
+      id: "changeover_finish",
+      title: "Potvrzení dokončení",
+      subtitle: "Dialog uzavření přehozu",
+      src: "/images/dialog_potvrzení_hotovo.png",
+    },
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -323,6 +394,195 @@ export default function Home() {
               reverse={false}
             />
           </Reveal>
+
+
+
+        <Reveal>
+          <TwoCol
+            title="Řízení přehozů (Changeover management)"
+            intro="Modul přehozů slouží k plánování, sledování a vyhodnocení změn výroby mezi referencemi. Umožňuje připravit další výrobu dopředu, sledovat průběh přehozu a evidovat jeho reálné trvání."
+            bullets={[
+              "Plánování přehozů dopředu",
+              "Zahájení a potvrzení operace",
+              "Evidence reálného trvání přehozu",
+              "Zadání důvodu zpoždění",
+              "Historie dokončených přehozů",
+            ]}
+            shot={shots.find((s) => s.id === "planned_changeovers")!}
+            onOpen={() => open("planned_changeovers")}
+            reverse={false}
+          />
+        </Reveal>
+
+
+        <Reveal>
+          <TwoCol
+            title="Průběh přehozu"
+            intro="Operátor nebo mistr může zahájit přehoz přímo v systému. Od tohoto okamžiku se počítá reálný čas operace. Po dokončení je možné potvrdit hotovo a případně uvést důvod zpoždění."
+            bullets={[
+              "Start přehozu jedním kliknutím",
+              "Automatické měření času",
+              "Potvrzení dokončení",
+              "Evidence zpoždění a důvodů",
+            ]}
+            shot={shots.find((s) => s.id === "changeover_start")!}
+            onOpen={() => open("changeover_start")}
+            reverse={true}
+          />
+        </Reveal>
+
+
+
+
+<Reveal>
+<TwoCol
+title="Naplánování přehozu"
+intro="Přehoz je možné naplánovat dopředu přímo v systému. Operátor nebo mistr vybere stroj, cílovou referenci a plánovaný čas změny výroby."
+bullets={[
+"Výběr stroje",
+"Výběr nové reference",
+"Naplánování času změny výroby",
+"Zobrazení v přehledu přehozů",
+]}
+shot={shots.find((s) => s.id === "changeover_dialog")!}
+onOpen={() => open("changeover_dialog")}
+reverse={false}
+/>
+</Reveal>
+
+
+
+<Reveal>
+<TwoCol
+title="Stav přehozu"
+intro="Po zahájení operace systém sleduje průběh přehozu. Operátor i mistr vidí aktuální stav a zbývající čas operace."
+bullets={[
+"Zobrazení aktuálního stavu",
+"Měření trvání operace",
+"Vizualizace průběhu přehozu",
+"Integrace se stavem stroje",
+]}
+shot={shots.find((s) => s.id === "changeover_status")!}
+onOpen={() => open("changeover_status")}
+reverse={true}
+/>
+</Reveal>
+
+
+
+<Reveal>
+<TwoCol
+title="Evidence zpoždění"
+intro="Pokud přehoz trvá déle než plánovaný čas, je možné zadat důvod zpoždění. Data lze později použít pro analýzu výrobních problémů."
+bullets={[
+"Zadání důvodu prodloužení",
+"Klasifikace problému",
+"Podklad pro analýzu výroby",
+"Součást historie přehozů",
+]}
+shot={shots.find((s) => s.id === "changeover_reason")!}
+onOpen={() => open("changeover_reason")}
+reverse={false}
+/>
+</Reveal>
+
+
+<Reveal>
+<TwoCol
+title="Next reference (příprava výroby)"
+intro="Správa strojů umožňuje definovat další referenci, která se bude vyrábět po dokončení aktuální zakázky."
+bullets={[
+"Příprava další výroby",
+"Napojení na plánování přehozů",
+"Zobrazení v přehledu strojů",
+"Podklad pro směnové plánování",
+]}
+shot={shots.find((s) => s.id === "machine_next_ref")!}
+onOpen={() => open("machine_next_ref")}
+reverse={true}
+/>
+</Reveal>
+
+
+
+
+
+<Reveal>
+<TwoCol
+title="Status bar přehozů"
+intro="Dashboard obsahuje status bar zobrazující aktivní přehozy a jejich stav. Operátoři tak mají okamžitý přehled o probíhajících změnách výroby."
+bullets={[
+"Rychlá informace o přehozech",
+"Vizualizace přímo na dashboardu",
+"Přehled pro směnu",
+]}
+shot={shots.find((s) => s.id === "changeover_statusbar")!}
+onOpen={() => open("changeover_statusbar")}
+reverse={false}
+/>
+</Reveal>
+
+
+
+
+<Reveal>
+<TwoCol
+title="Dokončení přehozu"
+intro="Po dokončení operace operátor potvrdí hotovo. Systém uloží reálný čas přehozu do historie."
+bullets={[
+"Potvrzení dokončení",
+"Uložení reálného času",
+"Zápis do historie přehozů",
+]}
+shot={shots.find((s) => s.id === "changeover_finish")!}
+onOpen={() => open("changeover_finish")}
+reverse={true}
+/>
+</Reveal>
+
+
+
+
+
+
+
+
+
+
+        <Reveal>
+          <TwoCol
+            title="Vizualizace přehozů na dashboardu"
+            intro="Dashboard může zobrazovat plánované přehozy přímo na velké obrazovce ve výrobě. Směna tak vidí dopředu připravené změny výroby a může se na ně připravit."
+            bullets={[
+              "Zobrazení plánovaných přehozů",
+              "Integrace s TV Dashboardem",
+              "Přehled změn výroby pro směnu",
+              "Napojení na stroje a reference",
+            ]}
+            shot={shots.find((s) => s.id === "changeover_tv")!}
+            onOpen={() => open("changeover_tv")}
+            reverse={false}
+          />
+        </Reveal>
+
+
+        <Reveal>
+          <TwoCol
+            title="Historie dokončených přehozů"
+            intro="Systém ukládá historii všech dokončených přehozů. Data lze použít pro analýzu trvání operací a optimalizaci výrobního procesu."
+            bullets={[
+              "Přehled všech dokončených přehozů",
+              "Reálné časy operací",
+              "Podklad pro statistiky výroby",
+              "Analýza zpoždění",
+            ]}
+            shot={shots.find((s) => s.id === "finished_changeovers")!}
+            onOpen={() => open("finished_changeovers")}
+            reverse={true}
+          />
+        </Reveal>
+
+
 
           {/* 2: Machines */}
 
