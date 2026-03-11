@@ -351,9 +351,10 @@ export default function Home() {
                 Součásti systému
               </h2>
               <p className="text-[#8B949E] text-lg leading-relaxed max-w-4xl">
-                TeamFrame je rozdělen do tří částí. Klient zajišťuje řízení lidí, strojů, referencí a úkolů.
-                Server drží centrální konzistenci dat, připravuje podklady pro dashboardy a zpracovává incidenty.
-                Dashboard je zobrazovací vrstva optimalizovaná pro velké obrazovky.
+                    TeamFrame je rozdělen do tří hlavních částí. 
+                    Klientská aplikace slouží pro správu výroby, server zajišťuje
+                    logiku a ukládání dat a dashboard zobrazuje stav provozu
+                    na velkých obrazovkách ve výrobě.
               </p>
             </div>
 
@@ -390,54 +391,52 @@ export default function Home() {
 
 
 <Reveal>
-  <section className="max-w-6xl mx-auto py-20 px-6">
+<section className="max-w-6xl mx-auto py-20 px-6">
 
-    <h2 className="text-3xl font-semibold mb-6">
-      Architektura systému
-    </h2>
+<h2 className="text-3xl font-semibold mb-6">
+Architektura systému
+</h2>
 
-    <p className="text-[#8B949E] mb-12 max-w-3xl">
-      TeamFrame je postaven na třívrstvé architektuře. 
-      Klientská aplikace slouží pro práci s daty, server zajišťuje logiku
-      a ukládání informací a samostatný dashboard zobrazuje stav výroby
-      na velkých obrazovkách ve výrobním prostoru.
-    </p>
+<p className="text-[#8B949E] mb-12 max-w-3xl">
+TeamFrame funguje jako třívrstvý systém. Klientská aplikace spravuje
+výrobní data, server zajišťuje jejich zpracování a dashboard zobrazuje
+aktuální stav provozu na velkých obrazovkách ve výrobě.
+</p>
 
-    <div className="grid md:grid-cols-3 gap-8">
+<div className="grid md:grid-cols-3 gap-8 items-center text-center">
 
-      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
-        <h3 className="text-xl font-semibold mb-2">
-          TeamFrame Client
-        </h3>
-        <p className="text-[#8B949E]">
-          Desktopová aplikace určená pro plánování směn, správu zaměstnanců,
-          konfiguraci strojů a práci s výrobními daty.
-        </p>
-      </div>
+<div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+<h3 className="text-lg font-semibold mb-2">Client</h3>
+<p className="text-[#8B949E] text-sm">
+Správa výroby, zaměstnanců, strojů a plánování směn.
+</p>
+</div>
 
-      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
-        <h3 className="text-xl font-semibold mb-2">
-          TeamFrame Server
-        </h3>
-        <p className="text-[#8B949E]">
-          Serverová část zajišťující zpracování dat, bezpečnost,
-          ukládání informací a komunikaci mezi jednotlivými moduly systému.
-        </p>
-      </div>
+<div className="text-3xl text-[#6B7280]">
+→
+</div>
 
-      <div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
-        <h3 className="text-xl font-semibold mb-2">
-          TeamFrame Dashboard
-        </h3>
-        <p className="text-[#8B949E]">
-          Vizualizační vrstva určená pro velké obrazovky ve výrobě,
-          která zobrazuje aktuální stav provozu a plánované operace.
-        </p>
-      </div>
+<div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+<h3 className="text-lg font-semibold mb-2">Server</h3>
+<p className="text-[#8B949E] text-sm">
+Zpracování dat, logika systému a ukládání informací.
+</p>
+</div>
 
-    </div>
+<div className="text-3xl text-[#6B7280]">
+→
+</div>
 
-  </section>
+<div className="bg-[#161B22] p-6 rounded-xl border border-[#30363D]">
+<h3 className="text-lg font-semibold mb-2">Dashboard</h3>
+<p className="text-[#8B949E] text-sm">
+Vizualizace stavu výroby a plánovaných operací.
+</p>
+</div>
+
+</div>
+
+</section>
 </Reveal>
 
 
