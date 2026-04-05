@@ -5,15 +5,21 @@ import { useEffect, useState } from "react";
 export default function DownloadClient() {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    fetch("https://broken-water-81ad.rendi023.workers.dev/api/download-count")
-      .then(res => res.json())
-      .then(data => {
-        console.log("COUNT DATA:", data); // DEBUG
-        setCount(data.count || 0);
-      })
-      .catch(err => console.log("COUNT ERROR:", err));
-  }, []);
+useEffect(() => {
+  fetch("https://broken-water-81ad.rendi023.workers.dev/api/download-count", {
+    cache: "no-store"
+  })
+    .then(res => res.json())
+    .then(data => {
+      console.log("COUNT DATA:", data);
+
+      // 💥 TADY JE FIX
+      if (typeof data.count === "number") {
+        setCount(data.count);
+      }
+    })
+    .catch(err => console.log("COUNT ERROR:", err));
+}, []);
 
 const handleDownload = async () => {
   try {
