@@ -15,18 +15,26 @@ export default function DownloadClient() {
       .catch(err => console.log("COUNT ERROR:", err));
   }, []);
 
-  const handleDownload = async () => {
-    try {
-      await fetch("https://broken-water-81ad.rendi023.workers.dev/api/download", {
-        method: "POST"
-      });
-    } catch (e) {
-      console.log("DOWNLOAD ERROR:", e);
+const handleDownload = async () => {
+  try {
+    const res = await fetch("https://broken-water-81ad.rendi023.workers.dev/api/download", {
+      method: "POST"
+    });
+
+    const data = await res.json();
+
+    // 🔥 OKAMŽITÁ AKTUALIZACE
+    if (data.count !== undefined) {
+      setCount(data.count);
     }
 
-    window.location.href =
-      "https://github.com/rendilife/teamframe-web/releases/download/v1.5.6/TeamFrameInstaller.exe";
-  };
+  } catch (e) {
+    console.log("DOWNLOAD ERROR:", e);
+  }
+
+  window.location.href =
+    "https://github.com/rendilife/teamframe-web/releases/download/v1.5.6/TeamFrameInstaller.exe";
+};
 
   return (
     <main className="min-h-screen bg-[#0E1117] text-[#E6EDF3] px-6 py-20">
