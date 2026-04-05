@@ -17,17 +17,17 @@ export default function DownloadClient() {
       .catch(() => {});
   }, []);
 
-  // 🔥 VERZE (z public/version.json)
+  // 🔥 VERZE
   useEffect(() => {
     fetch("/version.json")
       .then(res => res.json())
       .then(data => {
-        setVersion(data.client || "1.0.0");
+        setVersion(data.client || "");
       })
       .catch(() => {});
   }, []);
 
-  // 🔥 SIZE (GitHub)
+  // 🔥 SIZE
   useEffect(() => {
     fetch("https://api.github.com/repos/rendilife/teamframe-web/releases/latest")
       .then(res => res.json())
@@ -55,7 +55,6 @@ export default function DownloadClient() {
       if (data.count !== undefined) {
         setCount(data.count);
       }
-
     } catch {}
 
     window.location.href =
@@ -70,14 +69,14 @@ export default function DownloadClient() {
         <div>
           <h1 className="text-4xl font-bold mb-2">Stažení TeamFrame</h1>
           <p className="text-gray-400">
-            Kompletní systém pro plánování směn, řízení výroby a přehled v reálném čase.
+            Moderní systém pro plánování směn, řízení výroby a přehled v reálném čase.
           </p>
         </div>
 
         {/* DOWNLOAD BOX */}
         <div className="bg-[#161B22] border border-[#30363D] rounded-xl p-6 space-y-4">
 
-          <h2 className="text-xl font-semibold">📦 Installer</h2>
+          <h2 className="text-xl font-semibold">📦 TeamFrame Installer</h2>
 
           <button
             onClick={handleDownload}
@@ -86,14 +85,15 @@ export default function DownloadClient() {
             ⬇️ Stáhnout TeamFrame
           </button>
 
+          {/* 🔥 INFO (TADY JE TVŮJ COUNT ZPÁTKY) */}
           <div className="text-sm text-gray-400 space-y-1">
             {version && <p>Verze {version}</p>}
             {size && <p>Velikost: {size}</p>}
-            {count > 0 && <p>Staženo: {count}×</p>}
+            <p>Staženo: {count}×</p>
           </div>
         </div>
 
-        {/* POPIS */}
+        {/* POPIS – BEZ PŘEKOPÁNÍ */}
         <div className="space-y-4 text-sm text-gray-400">
 
           <div>
