@@ -13,10 +13,8 @@ useEffect(() => {
     .then(data => {
       console.log("COUNT DATA:", data);
 
-      // 💥 TADY JE FIX
-      if (typeof data.count === "number") {
-        setCount(data.count);
-      }
+      // 💥 TADY JE TEN FIX
+      setCount(Number(data.count) || 0);
     })
     .catch(err => console.log("COUNT ERROR:", err));
 }, []);
