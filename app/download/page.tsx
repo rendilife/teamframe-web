@@ -6,7 +6,7 @@ export default function Download() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    fetch("https://tvuj-worker-url/api/download-count")
+    fetch("https://broken-water-81ad.rendi023.workers.dev/api/download-count")
       .then(res => res.json())
       .then(data => setCount(data.count))
       .catch(() => {});
@@ -14,7 +14,7 @@ export default function Download() {
 
   const handleDownload = async () => {
     try {
-      await fetch("https://tvuj-worker-url/api/download", {
+      await fetch("https://broken-water-81ad.rendi023.workers.dev/api/download", {
         method: "POST"
       });
     } catch {}
@@ -27,7 +27,6 @@ export default function Download() {
     <main className="min-h-screen bg-[#0E1117] text-[#E6EDF3] px-6 py-20">
       <div className="max-w-5xl mx-auto space-y-12">
 
-        {/* 🔥 HLAVIČKA */}
         <div>
           <h1 className="text-4xl font-bold">Stažení TeamFrame</h1>
           <p className="text-[#8B949E] mt-2">
@@ -35,7 +34,6 @@ export default function Download() {
           </p>
         </div>
 
-        {/* 🔥 HLAVNÍ BLOK */}
         <div className="bg-[#161B22] p-6 rounded-2xl border border-[#30363D] space-y-6">
 
           <div>
@@ -58,41 +56,22 @@ export default function Download() {
 
         </div>
 
-        {/* 🔥 INFORMACE */}
         <div className="space-y-4 text-sm text-[#8B949E]">
 
           <div>
             <h3 className="text-white font-semibold">⚠️ Bezpečnostní upozornění</h3>
             <p>
-              Aplikace není aktuálně digitálně podepsaná. Windows může při spuštění zobrazit varování.
-              Jedná se o běžné chování u nových aplikací.
+              Aplikace není digitálně podepsaná. Windows může zobrazit varování.
             </p>
           </div>
 
           <div>
             <h3 className="text-white font-semibold">🧭 Jak spustit aplikaci</h3>
             <ol className="list-decimal ml-5 space-y-1">
-              <li>Stáhni soubor <b>TeamFrameInstaller.exe</b></li>
-              <li>Klikni pravým tlačítkem → <b>Spustit jako správce</b></li>
-              <li>Pokud Windows zobrazí varování, klikni na <b>Další informace → Přesto spustit</b></li>
+              <li>Stáhni TeamFrameInstaller.exe</li>
+              <li>Pravým → Spustit jako správce</li>
+              <li>Další informace → Přesto spustit</li>
             </ol>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold">🚀 Co získáš</h3>
-            <ul className="list-disc ml-5 space-y-1">
-              <li>TV Dashboard pro přehled výroby</li>
-              <li>Správu zaměstnanců a kvalifikací</li>
-              <li>Automatické plánování směn (ShiftBrain)</li>
-              <li>Reálný přehled o stavu strojů</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold">🧪 Stav projektu</h3>
-            <p>
-              Aktuální verze je beta. Systém se aktivně vyvíjí a může obsahovat drobné chyby.
-            </p>
           </div>
 
         </div>
