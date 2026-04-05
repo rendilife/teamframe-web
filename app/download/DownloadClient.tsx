@@ -98,9 +98,26 @@ export default function DownloadClient() {
 
           <div>
             <h3 className="text-white font-semibold">⚠️ Bezpečnost</h3>
-            <p>
-              Aplikace není zatím digitálně podepsaná. Windows může zobrazit varování.
-            </p>
+        <p>
+          Aplikace je ve fázi beta. Windows může při prvním spuštění zobrazit upozornění,
+          což je u nových aplikací běžné.
+        </p>
+
+
+
+        <p className="text-gray-400">
+          TeamFrame je systém pro plánování směn a řízení výroby,
+          který poskytuje okamžitý přehled o stavu pracovišť, zaměstnanců a procesů.
+        </p>
+
+        <p className="text-gray-400">
+          Umožňuje rychle reagovat na změny ve výrobě a zjednodušuje každodenní řízení provozu.
+        </p>
+
+
+
+        
+        
           </div>
 
           <div>
