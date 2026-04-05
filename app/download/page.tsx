@@ -1,13 +1,99 @@
+import { useEffect, useState } from "react";
+
 export default function Download() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    fetch("https://tvuj-worker-url/api/download-count")
+      .then(res => res.json())
+      .then(data => setCount(data.count))
+      .catch(() => {});
+  }, []);
+
+  const handleDownload = async () => {
+    try {
+      await fetch("https://tvuj-worker-url/api/download", {
+        method: "POST"
+      });
+    } catch {}
+
+    window.location.href =
+      "https://github.com/rendilife/teamframe-web/releases/download/v1.5.6/TeamFrameInstaller.exe";
+  };
+
   return (
     <main className="min-h-screen bg-[#0E1117] text-[#E6EDF3] px-6 py-20">
-      <div className="max-w-5xl mx-auto space-y-10">
+      <div className="max-w-5xl mx-auto space-y-12">
 
-        <h1 className="text-4xl font-bold">Stažení</h1>
+        {/* 🔥 HLAVIČKA */}
+        <div>
+          <h1 className="text-4xl font-bold">Stažení TeamFrame</h1>
+          <p className="text-[#8B949E] mt-2">
+            Moderní systém pro plánování směn a řízení výroby v reálném čase.
+          </p>
+        </div>
 
-        <p className="text-[#8B949E]">
-          Zde bude dostupná testovací verze TeamFrame.
-        </p>
+        {/* 🔥 HLAVNÍ BLOK */}
+        <div className="bg-[#161B22] p-6 rounded-2xl border border-[#30363D] space-y-6">
+
+          <div>
+            <h2 className="text-xl font-semibold">📦 TeamFrame Installer</h2>
+            <p className="text-[#8B949E] text-sm">
+              Kompletní instalátor obsahující Client, Server a Dashboard.
+            </p>
+          </div>
+
+          <button
+            onClick={handleDownload}
+            className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold"
+          >
+            ⬇️ Stáhnout instalátor
+          </button>
+
+          <p className="text-sm text-[#8B949E]">
+            Staženo: {count}×
+          </p>
+
+        </div>
+
+        {/* 🔥 INFORMACE */}
+        <div className="space-y-4 text-sm text-[#8B949E]">
+
+          <div>
+            <h3 className="text-white font-semibold">⚠️ Bezpečnostní upozornění</h3>
+            <p>
+              Aplikace není aktuálně digitálně podepsaná. Windows může při spuštění zobrazit varování.
+              Jedná se o běžné chování u nových aplikací.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold">🧭 Jak spustit aplikaci</h3>
+            <ol className="list-decimal ml-5 space-y-1">
+              <li>Stáhni soubor <b>TeamFrameInstaller.exe</b></li>
+              <li>Klikni pravým tlačítkem → <b>Spustit jako správce</b></li>
+              <li>Pokud Windows zobrazí varování, klikni na <b>Další informace → Přesto spustit</b></li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold">🚀 Co získáš</h3>
+            <ul className="list-disc ml-5 space-y-1">
+              <li>TV Dashboard pro přehled výroby</li>
+              <li>Správu zaměstnanců a kvalifikací</li>
+              <li>Automatické plánování směn (ShiftBrain)</li>
+              <li>Reálný přehled o stavu strojů</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold">🧪 Stav projektu</h3>
+            <p>
+              Aktuální verze je beta. Systém se aktivně vyvíjí a může obsahovat drobné chyby.
+            </p>
+          </div>
+
+        </div>
 
       </div>
     </main>
