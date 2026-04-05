@@ -96,29 +96,24 @@ export default function DownloadClient() {
         {/* POPIS – BEZ PŘEKOPÁNÍ */}
         <div className="space-y-4 text-sm text-gray-400">
 
-          <div>
-            <h3 className="text-white font-semibold">⚠️ Bezpečnost</h3>
-        <p>
-          Aplikace je ve fázi beta. Windows může při prvním spuštění zobrazit upozornění,
-          což je u nových aplikací běžné.
-        </p>
+        <div>
+          <h3 className="text-white font-semibold">⚠️ Bezpečnost</h3>
+          <p className="text-gray-400">
+            Aplikace je ve fázi beta. Windows může při prvním spuštění zobrazit upozornění,
+            což je u nových aplikací běžné.
+          </p>
+        </div>
 
-
-
-        <p className="text-gray-400">
-          TeamFrame je systém pro plánování směn a řízení výroby,
-          který poskytuje okamžitý přehled o stavu pracovišť, zaměstnanců a procesů.
-        </p>
-
-        <p className="text-gray-400">
-          Umožňuje rychle reagovat na změny ve výrobě a zjednodušuje každodenní řízení provozu.
-        </p>
-
-
-
-        
-        
-          </div>
+        <div>
+          <h3 className="text-white font-semibold">📘 O systému</h3>
+          <p className="text-gray-400">
+            TeamFrame je systém pro plánování směn a řízení výroby,
+            který poskytuje okamžitý přehled o stavu pracovišť, zaměstnanců a procesů.
+          </p>
+          <p className="text-gray-400">
+            Umožňuje rychle reagovat na změny ve výrobě a zjednodušuje každodenní řízení provozu.
+          </p>
+        </div>
 
           <div>
             <h3 className="text-white font-semibold">🧭 Instalace</h3>
