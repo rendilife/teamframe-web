@@ -80,7 +80,7 @@ export default function Home() {
 
 
 
-  const activeSection = SectionSpy();
+  SectionSpy();
 
   const shots: Shot[] = useMemo(
 

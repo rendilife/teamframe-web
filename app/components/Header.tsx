@@ -1,52 +1,61 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
-export default function Header() {
+const navItems = [
+  { href: "/#overview", label: "Přehled" },
+  { href: "/#architecture", label: "Architektura" },
+  { href: "/#modules", label: "Moduly" },
+  { href: "/#security", label: "Bezpečnost" },
+  { href: "/#license", label: "Licence" },
+  { href: "/updates", label: "Změny" },
+  { href: "/roadmap", label: "Roadmap" },
+  { href: "/docs", label: "Docs" },
+  { href: "/download", label: "Download" },
+  { href: "/#contact", label: "Kontakt" },
+];
 
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-[#161B22] bg-[#0E1117]/80 backdrop-blur">
-      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <div className="text-lg font-semibold tracking-wide">
-          <a href="/">
+          <Link href="/">
             Team<span className="text-[#00B3A4]">Frame</span>
-          </a>
+          </Link>
         </div>
 
-        <nav className="hidden md:flex gap-6 text-sm text-[#8B949E]">
-          <a className="hover:text-white transition" href="/#overview">Přehled</a>
-          <a className="hover:text-white transition" href="/#architecture">Architektura</a>
-          <a className="hover:text-white transition" href="/#modules">Moduly</a>
-          <a className="hover:text-white transition" href="/#security">Bezpečnost</a>
-          <a className="hover:text-white transition" href="/#license">Licence</a>
-          <a className="hover:text-white transition" href="/updates">Změny</a>
-          <a className="hover:text-white transition" href="/roadmap">Roadmap</a>
-          <a className="hover:text-white transition" href="/docs">Docs</a>
-          <a className="hover:text-white transition" href="/download">Download</a>
-          <a className="hover:text-white transition" href="/#contact">Kontakt</a>
+        <nav className="hidden gap-6 text-sm text-[#8B949E] md:flex">
+          {navItems.map((item) => (
+            <Link key={item.href} className="transition hover:text-white" href={item.href}>
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
         <button
-          className="md:hidden text-white text-xl"
-          onClick={() => setMenuOpen(!menuOpen)}
+          aria-expanded={menuOpen}
+          aria-label="Menu"
+          className="text-xl text-white md:hidden"
+          onClick={() => setMenuOpen((open) => !open)}
+          type="button"
         >
-          ☰
+          Menu
         </button>
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-[#161B22] bg-[#0E1117] px-6 py-4 flex flex-col gap-4 text-[#8B949E]">
-          <a href="/#overview" onClick={() => setMenuOpen(false)}>Přehled</a>
-          <a href="/#architecture" onClick={() => setMenuOpen(false)}>Architektura</a>
-          <a href="/#modules" onClick={() => setMenuOpen(false)}>Moduly</a>
-          <a href="/updates" onClick={() => setMenuOpen(false)}>Změny</a>
-          <a href="/roadmap" onClick={() => setMenuOpen(false)}>Roadmap</a>
-          <a href="/docs" onClick={() => setMenuOpen(false)}>Docs</a>
-          <a href="/download" onClick={() => setMenuOpen(false)}>Download</a>
-          <a href="/#contact" onClick={() => setMenuOpen(false)}>Kontakt</a>
-          <a href="/#license" onClick={() => setMenuOpen(false)}>Licence</a>
+        <div className="flex flex-col gap-4 border-t border-[#161B22] bg-[#0E1117] px-6 py-4 text-[#8B949E] md:hidden">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} onClick={closeMenu}>
+              {item.label}
+            </Link>
+          ))}
         </div>
       )}
     </header>

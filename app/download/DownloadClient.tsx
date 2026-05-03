@@ -2,10 +2,23 @@
 
 import { useEffect, useState } from "react";
 
+const DEFAULT_INSTALLER_URL =
+  "https://github.com/rendilife/teamframe-web/releases/latest/download/TeamFrameInstaller.exe";
+
+type GitHubAsset = {
+  name: string;
+  size: number;
+};
+
+type GitHubRelease = {
+  assets?: GitHubAsset[];
+};
+
 export default function DownloadClient() {
   const [count, setCount] = useState(0);
   const [version, setVersion] = useState("");
   const [size, setSize] = useState("");
+  const [installerUrl, setInstallerUrl] = useState(DEFAULT_INSTALLER_URL);
 
   // 🔥 COUNT
   useEffect(() => {
@@ -23,6 +36,7 @@ export default function DownloadClient() {
       .then(res => res.json())
       .then(data => {
         setVersion(data.client || "");
+        setInstallerUrl(data.installer_url || DEFAULT_INSTALLER_URL);
       })
       .catch(() => {});
   }, []);
@@ -31,8 +45,8 @@ export default function DownloadClient() {
   useEffect(() => {
     fetch("https://api.github.com/repos/rendilife/teamframe-web/releases/latest")
       .then(res => res.json())
-      .then(data => {
-        const asset = data.assets?.find((a: any) =>
+      .then((data: GitHubRelease) => {
+        const asset = data.assets?.find((a) =>
           a.name.includes("Installer")
         );
 
@@ -57,8 +71,7 @@ export default function DownloadClient() {
       }
     } catch {}
 
-    window.location.href =
-      "https://github.com/rendilife/teamframe-web/releases/latest/download/TeamFrameInstaller.exe";
+    window.location.href = installerUrl;
   };
 
   return (
