@@ -41,11 +41,13 @@ export default function Header() {
         <button
           aria-expanded={menuOpen}
           aria-label="Menu"
-          className="text-xl text-white md:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-md border border-[#30363D] text-white transition hover:border-[#00B3A4] hover:text-[#00B3A4] md:hidden"
           onClick={() => setMenuOpen((open) => !open)}
           type="button"
         >
-          Menu
+          <span className="h-0.5 w-5 rounded-full bg-current" />
+          <span className="h-0.5 w-5 rounded-full bg-current" />
+          <span className="h-0.5 w-5 rounded-full bg-current" />
         </button>
       </div>
 
