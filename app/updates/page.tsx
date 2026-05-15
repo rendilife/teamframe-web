@@ -10,6 +10,40 @@ export default function Updates() {
           Vývoj TeamFrame
         </h1>
 
+
+
+
+
+
+
+{/* Květen */}
+<div className="border border-[#161B22] rounded-xl p-6 bg-[#0B0F14]">
+  <h2 className="text-xl font-semibold">
+    Květen 2026
+  </h2>
+
+  <ul className="mt-4 text-[#8B949E] space-y-2">
+    <li>• Hybrid SQL Layer (SQLAlchemy)</li>
+    <li>• SQL → JSON fallback systém</li>
+    <li>• Realtime Snail Overlay optimalizace</li>
+    <li>• Výrazně rozšířená anglická lokalizace Clienta</li>
+    <li>• Stabilizace Dashboard ↔ Server realtime komunikace</li>
+    <li>• Read-only SQL endpointy</li>
+    <li>• SQL benchmark a integrity systém</li>
+    <li>• Vylepšený crash report systém</li>
+    <li>• Optimalizace launcher process managementu</li>
+    <li>• Další stabilizace ShiftBrain systému</li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
         {/* Březen */}
         <div className="border border-[#161B22] rounded-xl p-6 bg-[#0B0F14]">
           <h2 className="text-xl font-semibold">
