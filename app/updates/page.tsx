@@ -39,7 +39,25 @@ export default function Updates() {
 
 
 
+{/* Duben */}
+<div className="border border-[#161B22] rounded-xl p-6 bg-[#0B0F14]">
+  <h2 className="text-xl font-semibold">
+    Duben 2026
+  </h2>
 
+  <ul className="mt-4 text-[#8B949E] space-y-2">
+    <li>• Realtime Snail Overlay systém</li>
+    <li>• TV Dashboard fullscreen optimalizace</li>
+    <li>• Přidání status_since prostoj systému</li>
+    <li>• Vizualizace odstávek a mimo provoz stavů</li>
+    <li>• Přidání výrobních incidentů do Dashboardu</li>
+    <li>• Realtime API refresh optimalizace</li>
+    <li>• Stabilizace TeamFrame Launcheru</li>
+    <li>• Přidání GitHub release systému</li>
+    <li>• Začátek automatického update systému</li>
+    <li>• Přípravy pro hybrid SQL architekturu</li>
+  </ul>
+</div>
 
 
 
