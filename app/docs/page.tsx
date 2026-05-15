@@ -66,6 +66,79 @@ Production Dashboards`}
           </p>
         </section>
 
+
+
+
+{/* Dashboard */}
+<section className="space-y-3">
+  <h2 className="text-2xl font-semibold">TeamFrame Dashboard</h2>
+
+  <p className="text-[#8B949E]">
+    Dashboard slouží pro realtime vizualizaci výroby na velkých obrazovkách.
+    Zobrazuje ACTIVE/NEXT směny, stavy strojů, incidenty a plánované změny.
+  </p>
+
+  <ul className="list-disc pl-6 text-[#8B949E] space-y-1">
+    <li>fullscreen TV režim</li>
+    <li>realtime API refresh</li>
+    <li>incident monitoring</li>
+    <li>vizualizace prostojů</li>
+    <li>ACTIVE / NEXT zobrazení</li>
+  </ul>
+</section>
+
+
+
+{/* SQL Layer */}
+<section className="space-y-3">
+  <h2 className="text-2xl font-semibold">Hybrid SQL Layer</h2>
+
+  <p className="text-[#8B949E]">
+    TeamFrame aktuálně používá hybridní SQL vrstvu,
+    která bezpečně kombinuje SQL databázi s původním JSON backendem.
+  </p>
+
+  <ul className="list-disc pl-6 text-[#8B949E] space-y-1">
+    <li>SQLAlchemy 2.x</li>
+    <li>read-only SQL režim</li>
+    <li>SQL → JSON fallback</li>
+    <li>benchmark a integrity testy</li>
+    <li>bez zásahu do ShiftBrain logiky</li>
+  </ul>
+</section>
+
+
+
+
+{/* Realtime Engine */}
+<section className="space-y-3">
+  <h2 className="text-2xl font-semibold">Realtime Engine</h2>
+
+  <p className="text-[#8B949E]">
+    TeamFrame používá realtime synchronizaci mezi Serverem,
+    Dashboardem a klientskými aplikacemi.
+  </p>
+
+  <ul className="list-disc pl-6 text-[#8B949E] space-y-1">
+    <li>live machine states</li>
+    <li>incident synchronization</li>
+    <li>realtime refresh</li>
+    <li>Snail overlay API</li>
+    <li>low-latency polling system</li>
+  </ul>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </main>
   );
