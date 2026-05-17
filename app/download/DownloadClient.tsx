@@ -153,7 +153,7 @@ export default function DownloadClient() {
 <div className="bg-[#161B22] border border-[#30363D] rounded-xl p-6 space-y-4">
 
   <h2 className="text-xl font-semibold">
-    🚀 TeamFrame 1.6.4 – Official Changelog
+    🚀 TeamFrame 1.6.3 – Official Changelog
   </h2>
 
   <div className="space-y-6 text-sm text-gray-300">
