@@ -1,7 +1,7 @@
 {
-  "version": "1.6.3",
-  "client": "1.6.3",
-  "server": "1.6.3",
-  "dashboard": "1.6.3",
+  "version": "1.6.4",
+  "client": "1.6.4",
+  "server": "1.6.4",
+  "dashboard": "1.6.4",
   "installer_url": "https://github.com/rendilife/teamframe-web/releases/latest/download/TeamFrameInstaller.exe"
 }
