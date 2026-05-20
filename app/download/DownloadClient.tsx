@@ -150,94 +150,79 @@ export default function DownloadClient() {
 
 
 
+{/* 🚀 OFFICIAL CHANGELOG */}
 <div className="bg-[#161B22] border border-[#30363D] rounded-xl p-6 space-y-4">
 
-  <h2 className="text-xl font-semibold">
-    🚀 TeamFrame 1.6.7 – Official Changelog
-  </h2>
+  <div className="flex items-center justify-between flex-wrap gap-2">
+    <h2 className="text-xl font-semibold">
+      🚀 TeamFrame 1.6.7
+    </h2>
+
+    <span className="text-sm text-gray-500">
+      Vydáno: 20.05.2026
+    </span>
+  </div>
 
   <div className="space-y-6 text-sm text-gray-300">
 
+    {/* ✨ Přidáno */}
     <div>
       <h3 className="text-white font-semibold mb-2">
-        ✨ Hlavní změny
+        ✨ Přidáno
       </h3>
 
       <ul className="list-disc ml-5 space-y-1">
-        <li>Další rozvoj architektury TeamFrame</li>
-        <li>Stabilizace Client / Server / Dashboard komunikace</li>
-        <li>Pokračování příprav na hybrid SQL vrstvu</li>
-        <li>Rozšíření interních diagnostických systémů</li>
+        <li>WEB dashboard nově načítá avatary zaměstnanců přes bezpečný šifrovaný backend endpoint.</li>
+        <li>Start logika serveru nově automaticky rozlišuje DEV běh z Python zdrojáků a PROD Nuitka EXE build.</li>
+        <li>Přidána příprava infrastruktury pro budoucí PLC komunikaci a průmyslové napojení zařízení.</li>
+        <li>Rozšířen základ WEB architektury pro budoucí realtime průmyslové dashboardy a stavové vstupy.</li>
       </ul>
     </div>
 
+    {/* 🛠️ Opraveno */}
     <div>
       <h3 className="text-white font-semibold mb-2">
-        🌍 Lokalizace / Překlady
+        🛠️ Opraveno
       </h3>
 
       <ul className="list-disc ml-5 space-y-1">
-        <li>Výrazně rozšířena lokalizace TeamFrame Clienta</li>
-        <li>Přeložena velká část uživatelského rozhraní do angličtiny</li>
-        <li>Vylepšen systém dynamických překladů</li>
-        <li>Lepší kompatibilita překladů napříč moduly</li>
-        <li>Zachována česká backend data kompatibilita</li>
-        <li>Backend data se nadále nepřekládají – překlady probíhají pouze v UI vrstvě</li>
-        <li>Další přípravy pro podporu více jazyků</li>
+        <li>WEB dashboard hodiny nyní běží po vteřinách nezávisle na polling refreshi.</li>
+        <li>WEB launcher nyní spouští server_web.py v DEV režimu a server_web.exe v PROD režimu.</li>
+        <li>Changelog pending queue nově zachovává nevydané změny až do ostrého release publish buildu.</li>
+        <li>Changelog a release notes nyní používají české kategorie, české texty a UTF-8 bezpečné ikonky.</li>
+        <li>Opravena release logika pro správné rozlišení preview buildu a ostrého publish release režimu.</li>
       </ul>
     </div>
 
+    {/* ⚡ Optimalizováno */}
     <div>
       <h3 className="text-white font-semibold mb-2">
-        🐌 Snail Overlay / Realtime systém
+        ⚡ Optimalizováno
       </h3>
 
       <ul className="list-disc ml-5 space-y-1">
-        <li>Kompletně přepracována realtime komunikace šneka s API</li>
-        <li>Výrazně omezeno sekání a micro-lagy overlaye</li>
-        <li>Okamžitá reakce na STOP_INCIDENT stav</li>
-        <li>Okamžitá reakce na START stav</li>
-        <li>Stabilnější polling API endpointů</li>
-        <li>Lepší synchronizace Dashboard ↔ Server</li>
-        <li>Opravena logika zastavení pohybu při incidentu</li>
-        <li>Vylepšeno zobrazování realtime hlášek výroby</li>
+        <li>Dashboard refresh manager omezuje duplicitní intervaly a pozastavuje polling, když je stránka skrytá.</li>
+        <li>Machine cards a mobilní dashboard byly zkompaktněny pro TV obrazovky a mobilní zařízení.</li>
+        <li>Optimalizováno generování changelog preview a release notes pro rychlejší release workflow.</li>
+        <li>Vylepšena kompatibilita release buildů s Nuitka EXE prostředím a balením cryptography modulů.</li>
       </ul>
     </div>
 
+    {/* 🔧 PLC / Výroba */}
     <div>
       <h3 className="text-white font-semibold mb-2">
-        🗄️ SQL Layer (Hybrid režim)
+        🔧 PLC / Výroba
       </h3>
 
       <ul className="list-disc ml-5 space-y-1">
-        <li>Přidána první hybrid SQL vrstva</li>
-        <li>SQLAlchemy integrace pro TeamFrame Server</li>
-        <li>Bezpečný SQL → JSON fallback systém</li>
-        <li>Přidány read-only SQL endpointy</li>
-        <li>Přidány SQL benchmark a integrity testy</li>
-        <li>Přidány SQL health/debug endpointy</li>
-        <li>SQL vrstva zatím nepřebírá řízení systému</li>
-        <li>Zachována kompatibilita s původním JSON backendem</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 className="text-white font-semibold mb-2">
-        ⚙️ Výkon a stabilita
-      </h3>
-
-      <ul className="list-disc ml-5 space-y-1">
-        <li>Stabilnější dlouhodobý běh Dashboardu</li>
-        <li>Optimalizace interní komunikace vláken</li>
-        <li>Menší zatížení realtime aktualizací</li>
-        <li>Omezeny některé nadměrné debug výpisy</li>
-        <li>Stabilnější launcher process management</li>
+        <li>Připraven základ pro budoucí komunikaci s PLC systémy a průmyslovými zařízeními.</li>
+        <li>TeamFrame architektura byla upravena s důrazem na budoucí sběr stavů strojů a výrobních signálů.</li>
+        <li>Probíhá příprava infrastruktury pro průmyslové napojení výrobních linek a realtime monitoring.</li>
       </ul>
     </div>
 
   </div>
 </div>
-
 
 
 
