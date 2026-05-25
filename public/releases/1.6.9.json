@@ -1,18 +1,22 @@
 {
     "version":  "1.6.9",
-    "date":  "2026-05-24",
+    "date":  "2026-05-25",
     "sections":  [
                      {
                          "title":  "✨ Přidáno",
                          "items":  [
-                                       "Release build při ostrém -Publish automaticky generuje webový changelog JSON do public/releases/latest.json a public/releases/verze.json pro download stránku.",
-                                       "MiniDocky TeamFrame Clientu, Dashboardu a ServerLauncheru se nyní skládají do společného bottom-right stacku podle pořadí spuštění a automaticky se přeskládají při zavření nebo restartu docku."
+                                       "MiniDock stack podporuje ruční vertikální drag reorder mezi Clientem, Dashboardem a ServerLauncherem včetně persistentního pořadí a cross-process realignu."
                                    ]
                      },
                      {
                          "title":  "🛠️ Opraveno",
                          "items":  [
-                                       "12h ShiftEngine používá stejný bezpečný AES-GCM employee decrypt helper jako serverový employees modul a už nepadá na rozbitém decrypt_employee importu."
+                                       "Dashboard fullscreen toggle má debounce ochranu proti rychlému opakování, bezpečně skrývá MiniDock top-level okna a loguje closeEvent, aboutToQuit i Snail overlay lifecycle pro dohledání tichého ukončení.",
+                                       "Dashboard fullscreen režim zapisuje cross-process MiniDock fullscreen owner flag, takže Client a ServerLauncher docky dočasně sundají always-on-top a zůstanou za fullscreen Dashboardem.",
+                                       "MiniDock tooltip má vlastní always-on-top flag a po zobrazení se explicitně zvedá nad MiniDock, takže nezůstává schovaný za dockem.",
+                                       "MiniDock stack už při viditelném tooltipu nezvedá dock nad tooltip; tooltip se drží před MiniDockem i během auto realign heartbeatů.",
+                                       "MiniDock se po návratu z fullscreen suppress režimu vždy tvrdě obnoví přes show, raise a activateWindow; tooltip už nezablokuje návrat docku do popředí.",
+                                       "Dashboard moduly Plánované přehozy, Hotové přehozy a Grafy byly stabilizované proti duplicitním refresh timerům, reentrantnímu Qt renderu a těžkým pyqtgraph widgetům, které mohly způsobit tiché ukončení bez tracebacku."
                                    ]
                      }
                  ]
