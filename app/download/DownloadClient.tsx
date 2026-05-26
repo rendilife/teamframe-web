@@ -160,6 +160,23 @@ export default function DownloadClient() {
           </div>
         </div>
 
+
+
+
+        <a
+          href="https://github.com/rendilife/teamframe-web/releases"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-blue-400 hover:text-blue-300 text-sm mt-2"
+        >
+          📦 Zobrazit všechny verze a release historii
+        </a>
+
+
+
+
+
+
         {/* POPIS – BEZ PŘEKOPÁNÍ */}
         <div className="space-y-4 text-sm text-gray-400">
 
