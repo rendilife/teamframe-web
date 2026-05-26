@@ -34,16 +34,16 @@ const sections = [
   {
     title: "3. Důležité složky",
     body: [
-      "Aktuální lokální cesty podle vývojového stroje:"
+      "Projektové složky v typickém vývojovém nebo build workspace. Konkrétní umístění se může lišit podle instalace."
     ],
     items: [
-      "C:\\Users\\Acer\\Desktop\\server",
-      "C:\\Users\\Acer\\Desktop\\TeamFrame",
-      "C:\\Users\\Acer\\Desktop\\TeamFrameDashboard",
-      "C:\\Users\\Acer\\Desktop\\InstallerProject",
-      "C:\\Users\\Acer\\Desktop\\server_license_storage",
-      "C:\\Users\\Acer\\Desktop\\teamframe_web",
-      "C:\\Users\\Acer\\Desktop\\TeamFrameBuild"
+      "server/",
+      "TeamFrame/",
+      "TeamFrameDashboard/",
+      "InstallerProject/",
+      "server_license_storage/",
+      "teamframe_web/",
+      "TeamFrameBuild/"
     ]
   },
   {
@@ -105,7 +105,7 @@ const sections = [
       "Download stránka už automaticky načítá /releases/latest.json a dynamicky renderuje changelog. Layout, dark theme, download box, counter logika, version.json a installer URL logika se nemají zbytečně měnit."
     ],
     items: [
-      "Soubor: C:\\Users\\Acer\\Desktop\\teamframe_web\\app\\download\\DownloadClient.tsx",
+      "Soubor: teamframe_web/app/download/DownloadClient.tsx",
       "Pokud latest.json neexistuje, changelog se nezobrazí.",
       "Nesmí spadnout stránka ani Next.js hydration."
     ]
@@ -180,7 +180,7 @@ const sections = [
       "Dashboard snail už URL encoding používal."
     ],
     items: [
-      "Soubor: C:\\Users\\Acer\\Desktop\\TeamFrame\\snail\\snail_anim.py",
+      "Soubor: TeamFrame/snail/snail_anim.py",
       "Příčina: dept=Montáž v raw URL",
       "Oprava: urllib.parse.quote(str(dept), safe=\"\")",
       "Stejná API chyba se loguje max jednou za 30 sekund"
@@ -223,7 +223,7 @@ const sections = [
       "Modul má být napojený do existujícího TeamFrame module loaderu, ne otevíraný jako standalone okno."
     ],
     items: [
-      "Soubor: C:\\Users\\Acer\\Desktop\\TeamFrame\\widgets\\plc_manager_widget.py",
+      "Soubor: TeamFrame/widgets/plc_manager_widget.py",
       "MODULE_KEY = plc_manager",
       "správa PLC zařízení",
       "machine mapping",
@@ -304,16 +304,24 @@ const checklists = [
 
 const commands = [
   {
+    title: "Přejít do TeamFrame Client projektu",
+    code: `cd <workspace>\\TeamFrame`
+  },
+  {
     title: "Py compile jednoho souboru",
-    code: `& "C:\\Users\\Acer\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe" -m py_compile "C:\\Users\\Acer\\Desktop\\TeamFrame\\snail\\snail_anim.py"`
+    code: `python -m py_compile .\\snail\\snail_anim.py`
   },
   {
-    title: "Ověření JSON",
-    code: `& "C:\\Users\\Acer\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe" -c "import json; from pathlib import Path; p=Path(r'C:\\Users\\Acer\\Desktop\\InstallerProject\\pending_changes.json'); json.loads(p.read_text(encoding='utf-8-sig')); print('OK')"`
+    title: "Přejít do InstallerProject",
+    code: `cd <workspace>\\InstallerProject`
   },
   {
-    title: "Přidání pending změny",
-    code: `& "C:\\Users\\Acer\\Desktop\\InstallerProject\\add_pending_change.ps1" -Category "Fixed" -Module "client" -Text "Popis změny česky."`
+    title: "Ověření pending changelog JSON",
+    code: `python -c "import json; from pathlib import Path; json.loads(Path('pending_changes.json').read_text(encoding='utf-8-sig')); print('OK')"`
+  },
+  {
+    title: "Přidání pending změny do release queue",
+    code: `.\\add_pending_change.ps1 -Category "Fixed" -Module "client" -Text "Popis změny česky."`
   },
   {
     title: "Release preview",
@@ -322,6 +330,22 @@ const commands = [
   {
     title: "Ostrý release",
     code: `.\\build_full_release.ps1 -Version 1.6.10 -Publish`
+  },
+  {
+    title: "Přejít do webu a spustit vývojový server",
+    code: `cd <workspace>\\teamframe_web
+npm install
+npm run dev`
+  },
+  {
+    title: "Ověřit pouze dokumentační stránku",
+    code: `cd <workspace>\\teamframe_web
+npm exec eslint app/docs/page.tsx`
+  },
+  {
+    title: "Build webu",
+    code: `cd <workspace>\\teamframe_web
+npm run build`
   }
 ];
 
