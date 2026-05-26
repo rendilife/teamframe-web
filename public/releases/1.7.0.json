@@ -1,0 +1,23 @@
+{
+    "version":  "1.7.0",
+    "date":  "2026-05-26",
+    "sections":  [
+                     {
+                         "title":  "🛠️ Opraveno",
+                         "items":  [
+                                       "Release build má fallback pro Nuitka uninstaller onefile kompresor; pokud komprese spadne, Uninstall.exe se automaticky znovu sestaví s --onefile-no-compression bez pádu celé pipeline.",
+                                       "Licenční vrstvy Serveru, Clientu a Dashboardu zachovávají trial_status odděleně od placené licence, takže aktivace licence lokálně nesmaže zkušební stav.",
+                                       "Cloudflare Worker při první aktivaci placené licence přičítá zbývající trial dny k délce licence a trial záznam ponechává zachovaný pro audit.",
+                                       "ServerLauncher a Dashboard mají ochranu proti vícenásobnému spuštění přes Qt lock soubor, stejně jako TeamFrame Client.",
+                                       "Client snail overlay správně URL-encoduje názvy oddělení s diakritikou a omezuje opakované API error logy."
+                                   ]
+                     },
+                     {
+                         "title":  "🔐 Bezpečnost",
+                         "items":  [
+                                       "Generátor licenčních klíčů už neukládá Cloudflare API token ve zdrojovém kódu, používá kryptografické generování klíčů a zapisuje trial_days kompatibilní s Cloudflare Workerem.",
+                                       "Licenční logy Clientu a Dashboardu maskují license_key a hwid, aby se citlivé údaje nevypisovaly čitelně do konzole."
+                                   ]
+                     }
+                 ]
+}
