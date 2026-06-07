@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Reveal from "@/app/components/Reveal";
+import VisitCounter from "@/app/components/visits/VisitCounter";
 
 
 
@@ -1391,6 +1392,7 @@ reverse={true}
 
       <footer className="px-6 py-8 text-center text-xs text-[#6B7280]">
         © {new Date().getFullYear()} TeamFrame
+        <VisitCounter />
       </footer>
 
       {/* LIGHTBOX */}

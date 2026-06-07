@@ -4,6 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
 import Header from "@/app/components/Header";
+import VisitorTracker from "@/app/components/visits/VisitorTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,8 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 
         <Header />
+
+        <VisitorTracker />
 
         {children}
 
