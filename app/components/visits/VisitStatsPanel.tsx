@@ -88,7 +88,7 @@ export default function VisitStatsPanel() {
     };
 
     load();
-    const timer = window.setInterval(load, 30_000);
+    const timer = window.setInterval(load, 60_000);
 
     return () => {
       active = false;

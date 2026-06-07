@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 const DEVICE_KEY = "teamframe_web_device_id";
-const HEARTBEAT_MS = 20_000;
+const HEARTBEAT_MS = 60_000;
 
 function makeDeviceId() {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {

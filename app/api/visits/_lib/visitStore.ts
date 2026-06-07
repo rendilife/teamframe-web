@@ -32,7 +32,7 @@ type VisitSessionResult = {
   returning: boolean;
   storage: VisitStats["storage"];
   persistent: boolean;
-  stats: VisitStats;
+  stats?: VisitStats;
 };
 
 type VisitRecord = {
@@ -62,7 +62,7 @@ const VISITOR_WORKER_URL = (
   "https://broken-water-81ad.rendi023.workers.dev"
 ).replace(/\/+$/, "");
 const HASH_SALT = process.env.VISITOR_COUNTER_SALT || "teamframe-web-visitor-counter";
-const SESSION_DELTA_LIMIT_SECONDS = 30;
+const SESSION_DELTA_LIMIT_SECONDS = 75;
 
 const KEY_PREFIX = "teamframe:web:visits";
 
