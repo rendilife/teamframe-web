@@ -2,7 +2,7 @@ import crypto from "node:crypto";
 
 export type VisitStats = {
   ok: boolean;
-  storage: "redis" | "memory" | "disabled";
+  storage: "redis" | "worker" | "memory" | "disabled";
   persistent: boolean;
   date: string;
   totalVisits: number;
@@ -56,6 +56,11 @@ type MemoryState = {
 
 const REDIS_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
 const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
+const VISITOR_WORKER_URL = (
+  process.env.VISITOR_COUNTER_WORKER_URL ||
+  process.env.NEXT_PUBLIC_VISITOR_COUNTER_WORKER_URL ||
+  "https://broken-water-81ad.rendi023.workers.dev"
+).replace(/\/+$/, "");
 const HASH_SALT = process.env.VISITOR_COUNTER_SALT || "teamframe-web-visitor-counter";
 const SESSION_DELTA_LIMIT_SECONDS = 30;
 
@@ -83,6 +88,10 @@ function getMemoryState(): MemoryState {
 
 function hasRedis() {
   return Boolean(REDIS_URL && REDIS_TOKEN);
+}
+
+function hasWorker() {
+  return Boolean(VISITOR_WORKER_URL);
 }
 
 function dateStamp(now = new Date()) {
@@ -174,6 +183,50 @@ async function redisCommand(command: (string | number)[]) {
 
   const data = await response.json();
   return data?.result;
+}
+
+async function workerJsonRequest<T>(
+  path: string,
+  init?: {
+    method?: "GET" | "POST";
+    body?: unknown;
+  },
+): Promise<T> {
+  if (!hasWorker()) {
+    throw new Error("Visitor counter worker URL is not configured.");
+  }
+
+  const response = await fetch(`${VISITOR_WORKER_URL}${path}`, {
+    method: init?.method || "GET",
+    headers: init?.body ? { "Content-Type": "application/json" } : undefined,
+    body: init?.body ? JSON.stringify(init.body) : undefined,
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    const body = await response.text().catch(() => "");
+    throw new Error(`Visitor worker request failed: ${response.status} ${body.slice(0, 200)}`);
+  }
+
+  return response.json() as Promise<T>;
+}
+
+async function getWorkerStats(): Promise<VisitStats> {
+  return workerJsonRequest<VisitStats>("/api/visits/stats");
+}
+
+async function trackWorkerSession(input: VisitSessionInput): Promise<VisitSessionResult> {
+  return workerJsonRequest<VisitSessionResult>("/api/visits/session", {
+    method: "POST",
+    body: input,
+  });
+}
+
+async function trackWorkerHeartbeat(input: VisitHeartbeatInput): Promise<VisitSessionResult> {
+  return workerJsonRequest<VisitSessionResult>("/api/visits/heartbeat", {
+    method: "POST",
+    body: input,
+  });
 }
 
 function keys(day: string, deviceHash?: string) {
@@ -444,6 +497,14 @@ export async function trackVisitSession(input: VisitSessionInput) {
     return trackRedisSession(input);
   }
 
+  if (hasWorker()) {
+    try {
+      return await trackWorkerSession(input);
+    } catch (error) {
+      console.error("[VISITS] Cloudflare Worker session fallback failed:", error);
+    }
+  }
+
   return trackMemorySession(input);
 }
 
@@ -456,12 +517,28 @@ export async function trackVisitHeartbeat(input: VisitHeartbeatInput) {
     return trackRedisHeartbeat(input);
   }
 
+  if (hasWorker()) {
+    try {
+      return await trackWorkerHeartbeat(input);
+    } catch (error) {
+      console.error("[VISITS] Cloudflare Worker heartbeat fallback failed:", error);
+    }
+  }
+
   return trackMemoryHeartbeat(input);
 }
 
 export async function getVisitStats() {
   if (hasRedis()) {
     return getRedisStats();
+  }
+
+  if (hasWorker()) {
+    try {
+      return await getWorkerStats();
+    } catch (error) {
+      console.error("[VISITS] Cloudflare Worker stats fallback failed:", error);
+    }
   }
 
   return getMemoryStats();

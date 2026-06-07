@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 type VisitStats = {
   ok: boolean;
-  storage: "redis" | "memory" | "disabled";
+  storage: "redis" | "worker" | "memory" | "disabled";
   persistent: boolean;
   totalVisits: number;
   todayVisits: number;

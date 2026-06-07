@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 type VisitStats = {
   ok: boolean;
-  storage: "redis" | "memory" | "disabled";
+  storage: "redis" | "worker" | "memory" | "disabled";
   persistent: boolean;
   date: string;
   totalVisits: number;
@@ -151,18 +151,19 @@ export default function VisitStatsPanel() {
         <div className="rounded-xl border border-[#30363D] bg-[#0D1117] p-5">
           <div className="text-sm text-[#8B949E]">Úložiště</div>
           <div className="mt-2 text-2xl font-semibold">
-            {stats.persistent ? "Vercel KV / Upstash" : "Dočasná paměť"}
+            {stats.storage === "worker"
+              ? "Cloudflare Worker KV"
+              : stats.storage === "redis"
+                ? "Vercel KV / Upstash"
+                : "Dočasná paměť"}
           </div>
         </div>
       </div>
 
       {!stats.persistent && (
         <div className="rounded-xl border border-[#5D4A1F] bg-[#16120A] p-5 text-sm text-[#F2CC60]">
-          Produkční perzistentní počítadlo vyžaduje env proměnné
-          <code className="mx-1 rounded bg-black/40 px-1.5 py-0.5">KV_REST_API_URL</code>
-          a
-          <code className="mx-1 rounded bg-black/40 px-1.5 py-0.5">KV_REST_API_TOKEN</code>
-          nebo Upstash varianty.
+          Počítadlo běží jen v dočasné paměti. Zkontroluj nasazení Cloudflare Workeru
+          nebo nastav env proměnné pro Vercel KV / Upstash.
         </div>
       )}
 
