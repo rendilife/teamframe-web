@@ -1,7 +1,7 @@
 {
-  "version": "1.7.1",
-  "client": "1.7.1",
-  "server": "1.7.1",
-  "dashboard": "1.7.1",
+  "version": "1.7.2",
+  "client": "1.7.2",
+  "server": "1.7.2",
+  "dashboard": "1.7.2",
   "installer_url": "https://github.com/rendilife/teamframe-web/releases/latest/download/TeamFrameInstaller.exe"
 }
