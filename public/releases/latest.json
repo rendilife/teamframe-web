@@ -1,7 +1,27 @@
 {
-    "version":  "1.7.4",
-    "date":  "2026-06-20",
-    "sections":  [
-
-                 ]
+  "version": "1.7.4",
+  "date": "2026-06-19",
+  "sections": [
+    {
+      "title": "✨ Přidáno",
+      "items": [
+        "Připravena infrastruktura Server Profiles pro TeamFrame Client včetně aktivního profilu SteamDeck, profilu Acer DEV a kompatibilního fallbacku na settings.cfg.",
+        "Přidán GUI modul Server profily pro TeamFrame Client, který umožňuje spravovat profily SteamDeck/Acer DEV, testovat spojení a nastavit aktivní server přímo z menu.",
+        "Přidán GUI modul Server profily pro TeamFrame Dashboard, který spravuje profily SteamDeck/Acer DEV a při aktivaci synchronizuje [Network] v settings.cfg bez druhého runtime zdroje pravdy.",
+        "Start dialog TeamFrame při selhání API kontroly nově nabízí tlačítko Server profily přímo ve stávajícím okně.",
+        "TeamFrame Dashboard má nový start dialog se startovní kontrolou API/WEB/DATA a při výpadku serveru umí otevřít Server profily pro rychlé přepnutí IP adresy."
+      ]
+    },
+    {
+      "title": "🛠️ Opraveno",
+      "items": [
+        "Server profily v TeamFrame Clientu a Dashboardu mají opravené české texty, menu ikonku a po aktivaci profilu nabídnou bezpečný restart aplikace.",
+        "Restart po změně server profilu nyní zavírá MiniDock i všechna top-level Qt okna a v DEV režimu respektuje spouštěcí BAT skripty.",
+        "Server profily vložené ve start dialogu TeamFrame Clientu a Dashboardu mají kompaktní layout, aby byla viditelná pole pro název, IP adresu, porty a datovou cestu.",
+        "Start dialog TeamFrame má upravený kompaktní layout server profilů, aby akční tlačítka nepřekrývala pole formuláře.",
+        "Opraveno překrývání tlačítek a formuláře server profilů ve start dialogu TeamFrame při menší velikosti okna.",
+        "Opraveno vykreslení titulku rámečku Server profilů ve start dialogu TeamFrame a Dashboardu, aby text nepřekrýval horní linku rámečku."
+      ]
+    }
+  ]
 }
