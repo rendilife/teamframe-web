@@ -59,7 +59,7 @@ const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_R
 const VISITOR_WORKER_URL = (
   process.env.VISITOR_COUNTER_WORKER_URL ||
   process.env.NEXT_PUBLIC_VISITOR_COUNTER_WORKER_URL ||
-  "https://broken-water-81ad.rendi023.workers.dev"
+  "https://teamframe-analytics-api.rendi023.workers.dev"
 ).replace(/\/+$/, "");
 const HASH_SALT = process.env.VISITOR_COUNTER_SALT || "teamframe-web-visitor-counter";
 const SESSION_DELTA_LIMIT_SECONDS = 75;
