@@ -21,6 +21,7 @@ export default function Header() {
           <a className="hover:text-white transition" href="/#modules">Moduly</a>
           <a className="hover:text-white transition" href="/#security">Bezpečnost</a>
           <a className="hover:text-white transition" href="/#license">Licence</a>
+          <a className="hover:text-[#55e9d8] transition" href="/glyphflow">GlyphFlow</a>
           <a className="hover:text-white transition" href="/updates">Změny</a>
           <a className="hover:text-white transition" href="/roadmap">Roadmap</a>
           <a className="hover:text-white transition" href="/docs">Docs</a>
@@ -41,6 +42,7 @@ export default function Header() {
           <a href="/#overview" onClick={() => setMenuOpen(false)}>Přehled</a>
           <a href="/#architecture" onClick={() => setMenuOpen(false)}>Architektura</a>
           <a href="/#modules" onClick={() => setMenuOpen(false)}>Moduly</a>
+          <a href="/glyphflow" onClick={() => setMenuOpen(false)}>GlyphFlow</a>
           <a href="/updates" onClick={() => setMenuOpen(false)}>Změny</a>
           <a href="/roadmap" onClick={() => setMenuOpen(false)}>Roadmap</a>
           <a href="/docs" onClick={() => setMenuOpen(false)}>Docs</a>
