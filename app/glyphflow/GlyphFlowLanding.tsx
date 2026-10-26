@@ -1,12 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
 
-import toolsScreen from "./media/tools.png";
-import animationScreen from "./media/animation.png";
-import communityScreen from "./media/community.png";
-import libraryScreen from "./media/library.png";
-import clockScreen from "./media/clock.png";
-import weatherScreen from "./media/weather.png";
 
 type Language = "cs" | "en";
 
@@ -19,7 +12,9 @@ type Feature = {
 type Screenshot = {
   title: string;
   description: string;
-  image: { src: string; height: number; width: number; blurDataURL?: string };
+  src: string;
+  width: number;
+  height: number;
 };
 
 const content = {
@@ -57,12 +52,12 @@ const content = {
     screenshotsLead: "Vybral jsem nejzajímavější obrazovky, aby web působil čistěji a přitom ukázal hlavní sílu aplikace.",
     screenshotsHint: "Galerii můžeš posouvat do stran.",
     screenshots: [
-      { title: "Nástroje", description: "Hlavní rozcestník funkcí: hardware test, Wallet, kontakty, počasí, hodiny i FAQ.", image: toolsScreen },
-      { title: "Studio animací", description: "Editor snímků, jasových vrstev a přímé odeslání animace na Glyph Matrix.", image: animationScreen },
-      { title: "Komunitní knihovna", description: "Napojení na Cloudflare komunitu a přehled online stavu knihovny obsahu.", image: communityScreen },
-      { title: "Knihovna Glyphů", description: "Ukázka uživatelského obsahu: obrázky, symboly, texty a komunitní motivy.", image: libraryScreen },
-      { title: "Hodiny", description: "Živý náhled hodin a přepínání stylů čísel přímo pro zadní Glyph Matrix.", image: clockScreen },
-      { title: "Počasí", description: "Online počasí podle polohy telefonu nebo zadaného města s okamžitým spuštěním na Glyphu.", image: weatherScreen },
+      { title: "Nástroje", description: "Hlavní rozcestník funkcí: hardware test, Wallet, kontakty, počasí, hodiny i FAQ.", src: "/glyphflow/tools.png", width: 691, height: 1536 },
+      { title: "Studio animací", description: "Editor snímků, jasových vrstev a přímé odeslání animace na Glyph Matrix.", src: "/glyphflow/animation.png", width: 691, height: 1536 },
+      { title: "Komunitní knihovna", description: "Napojení na Cloudflare komunitu a přehled online stavu knihovny obsahu.", src: "/glyphflow/community.png", width: 691, height: 1536 },
+      { title: "Knihovna Glyphů", description: "Ukázka uživatelského obsahu: obrázky, symboly, texty a komunitní motivy.", src: "/glyphflow/library.png", width: 691, height: 1536 },
+      { title: "Hodiny", description: "Živý náhled hodin a přepínání stylů čísel přímo pro zadní Glyph Matrix.", src: "/glyphflow/clock.png", width: 1164, height: 1600 },
+      { title: "Počasí", description: "Online počasí podle polohy telefonu nebo zadaného města s okamžitým spuštěním na Glyphu.", src: "/glyphflow/weather.png", width: 691, height: 1536 },
     ] satisfies Screenshot[],
     betaTag: "PŘIPOJ SE K TESTOVÁNÍ",
     betaTitle: "Hledáme první skutečné uživatele.",
@@ -122,12 +117,12 @@ const content = {
     screenshotsLead: "I kept only the strongest screenshots so the page stays cleaner while still showing the app’s main strengths.",
     screenshotsHint: "You can scroll the gallery sideways.",
     screenshots: [
-      { title: "Tools", description: "The main gateway to the app: hardware tests, Wallet, contacts, weather, clocks and help.", image: toolsScreen },
-      { title: "Animation studio", description: "Frame editor, brightness layers and direct playback on the physical Glyph Matrix.", image: animationScreen },
-      { title: "Community library", description: "Connected Cloudflare community space with library status and shortcuts.", image: communityScreen },
-      { title: "Glyph library", description: "Examples of user content: pictures, symbols, text and shared community creations.", image: libraryScreen },
-      { title: "Clocks", description: "Live clock preview with multiple number styles for the rear Glyph Matrix.", image: clockScreen },
-      { title: "Weather", description: "Live weather based on phone location or a selected city, with instant Glyph output.", image: weatherScreen },
+      { title: "Tools", description: "The main gateway to the app: hardware tests, Wallet, contacts, weather, clocks and help.", src: "/glyphflow/tools.png", width: 691, height: 1536 },
+      { title: "Animation studio", description: "Frame editor, brightness layers and direct playback on the physical Glyph Matrix.", src: "/glyphflow/animation.png", width: 691, height: 1536 },
+      { title: "Community library", description: "Connected Cloudflare community space with library status and shortcuts.", src: "/glyphflow/community.png", width: 691, height: 1536 },
+      { title: "Glyph library", description: "Examples of user content: pictures, symbols, text and shared community creations.", src: "/glyphflow/library.png", width: 691, height: 1536 },
+      { title: "Clocks", description: "Live clock preview with multiple number styles for the rear Glyph Matrix.", src: "/glyphflow/clock.png", width: 1164, height: 1600 },
+      { title: "Weather", description: "Live weather based on phone location or a selected city, with instant Glyph output.", src: "/glyphflow/weather.png", width: 691, height: 1536 },
     ] satisfies Screenshot[],
     betaTag: "BECOME A BETA TESTER",
     betaTitle: "Help shape what comes next.",
@@ -167,14 +162,14 @@ function HeroPreview({ lang }: { lang: Language }) {
         </div>
         <div className="grid gap-4 md:grid-cols-[1.08fr_.92fr]">
           <div className="overflow-hidden rounded-[26px] border border-[#23414a] bg-[#050a0f]">
-            <Image src={toolsScreen} alt={t.heroMain} className="h-auto w-full" placeholder={toolsScreen.blurDataURL ? "blur" : "empty"} priority />
+            <img src="/glyphflow/tools.png" alt={t.heroMain} width={691} height={1536} loading="eager" decoding="async" className="block h-[450px] w-full object-cover object-top" />
           </div>
           <div className="grid gap-4">
             <div className="overflow-hidden rounded-[26px] border border-[#23414a] bg-[#050a0f]">
-              <Image src={animationScreen} alt={t.heroSecondary} className="h-auto w-full" placeholder={animationScreen.blurDataURL ? "blur" : "empty"} />
+              <img src="/glyphflow/animation.png" alt={t.heroSecondary} width={691} height={1536} loading="eager" decoding="async" className="block h-[213px] w-full object-cover object-top" />
             </div>
             <div className="overflow-hidden rounded-[26px] border border-[#23414a] bg-[#050a0f]">
-              <Image src={libraryScreen} alt={t.heroThird} className="h-auto w-full" placeholder={libraryScreen.blurDataURL ? "blur" : "empty"} />
+              <img src="/glyphflow/library.png" alt={t.heroThird} width={691} height={1536} loading="lazy" decoding="async" className="block h-[213px] w-full object-cover object-top" />
             </div>
           </div>
         </div>
@@ -188,7 +183,7 @@ function SliderCard({ shot }: { shot: Screenshot }) {
     <article className="snap-start shrink-0 overflow-hidden rounded-[28px] border border-[#20353c] bg-[#0f1c23] shadow-[0_25px_80px_rgba(0,0,0,.22)] w-[86vw] max-w-[420px]">
       <div className="border-b border-[#19313a] bg-[#081117] p-3 sm:p-4">
         <div className="overflow-hidden rounded-[22px] border border-[#23414a] bg-[#050a0f]">
-          <Image src={shot.image} alt={shot.title} className="h-auto w-full" placeholder={shot.image.blurDataURL ? "blur" : "empty"} />
+          <img src={shot.src} alt={shot.title} width={shot.width} height={shot.height} loading="lazy" decoding="async" className="block h-[460px] w-full object-contain object-top" />
         </div>
       </div>
       <div className="p-5 sm:p-6">
