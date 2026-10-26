@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WheelScrollGallery from "./WheelScrollGallery";
 
 
 type Language = "cs" | "en";
@@ -50,7 +51,7 @@ const content = {
     screenshotsTag: "REÁLNÉ UKÁZKY Z APLIKACE",
     screenshotsTitle: "Jak GlyphFlow skutečně vypadá.",
     screenshotsLead: "Vybral jsem nejzajímavější obrazovky, aby web působil čistěji a přitom ukázal hlavní sílu aplikace.",
-    screenshotsHint: "Galerii můžeš posouvat do stran.",
+    screenshotsHint: "Najeď myší na galerii a posouvej obrázky kolečkem. Na telefonu stačí táhnout prstem.",
     screenshots: [
       { title: "Nástroje", description: "Hlavní rozcestník funkcí: hardware test, Wallet, kontakty, počasí, hodiny i FAQ.", src: "/glyphflow/tools.png", width: 691, height: 1536 },
       { title: "Studio animací", description: "Editor snímků, jasových vrstev a přímé odeslání animace na Glyph Matrix.", src: "/glyphflow/animation.png", width: 691, height: 1536 },
@@ -115,7 +116,7 @@ const content = {
     screenshotsTag: "REAL APP PREVIEWS",
     screenshotsTitle: "How GlyphFlow actually looks.",
     screenshotsLead: "I kept only the strongest screenshots so the page stays cleaner while still showing the app’s main strengths.",
-    screenshotsHint: "You can scroll the gallery sideways.",
+    screenshotsHint: "Hover over the gallery and use your mouse wheel to scroll sideways. Swipe on mobile.",
     screenshots: [
       { title: "Tools", description: "The main gateway to the app: hardware tests, Wallet, contacts, weather, clocks and help.", src: "/glyphflow/tools.png", width: 691, height: 1536 },
       { title: "Animation studio", description: "Frame editor, brightness layers and direct playback on the physical Glyph Matrix.", src: "/glyphflow/animation.png", width: 691, height: 1536 },
@@ -263,9 +264,9 @@ export default function GlyphFlowLanding({ lang }: { lang: Language }) {
           <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight md:text-5xl">{t.screenshotsTitle}</h2>
           <p className="mt-5 max-w-3xl text-[#adc6c9]">{t.screenshotsLead}</p>
           <p className="mt-3 text-sm text-[#7fa0a5]">{t.screenshotsHint}</p>
-          <div className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4">
+          <WheelScrollGallery label={isCs ? "Galerie obrázků GlyphFlow" : "GlyphFlow screenshot gallery"}>
             {t.screenshots.map((shot) => <SliderCard key={shot.title} shot={shot} />)}
-          </div>
+          </WheelScrollGallery>
         </div>
       </section>
 
