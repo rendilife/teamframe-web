@@ -181,7 +181,7 @@ function HeroPreview({ lang }: { lang: Language }) {
 
 function SliderCard({ shot }: { shot: Screenshot }) {
   return (
-    <article className="snap-start shrink-0 overflow-hidden rounded-[28px] border border-[#20353c] bg-[#0f1c23] shadow-[0_25px_80px_rgba(0,0,0,.22)] w-[86vw] max-w-[420px]">
+    <article className="shrink-0 overflow-hidden rounded-[28px] border border-[#20353c] bg-[#0f1c23] shadow-[0_25px_80px_rgba(0,0,0,.22)] w-[86vw] max-w-[420px]">
       <div className="border-b border-[#19313a] bg-[#081117] p-3 sm:p-4">
         <div className="overflow-hidden rounded-[22px] border border-[#23414a] bg-[#050a0f]">
           <img src={shot.src} alt={shot.title} width={shot.width} height={shot.height} loading="lazy" decoding="async" className="block h-[460px] w-full object-contain object-top" />
