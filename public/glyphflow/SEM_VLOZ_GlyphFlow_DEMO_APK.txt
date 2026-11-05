@@ -1,0 +1,1 @@
+Do teto slozky vloz skutecnou release APK pojmenovanou GlyphFlow_DEMO.apk. Soubor APK neni soucasti patche.

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import GlyphFlowDemoDownload from "./GlyphFlowDemoDownload";
 import WheelScrollGallery from "./WheelScrollGallery";
 
 
@@ -22,6 +23,12 @@ const content = {
   cs: {
     navProject: "Další projekt od Rendi Studio",
     navBeta: "Uzavřená beta",
+    demoNav: "Stáhnout DEMO",
+    demoTag: "BEZPLATNÁ UKÁZKA",
+    demoTitle: "Vyzkoušej GlyphFlow DEMO na svém Nothing Phone.",
+    demoDescription: "Samostatná omezená verze. Kresli obrázky 13 × 13, vytvářej animace, otestuj ukázkový textový tok a základní režim equalizeru na Glyph Matrix. Pokročilé funkce jsou součástí plné aplikace.",
+    demoImportant: "Demo není přihláškou do uzavřené bety. Plná verze je zatím dostupná jen schváleným testerům.",
+    demoBetaLink: "Přihlásit se do betatestu",
     eyebrow: "NEZÁVISLÉ GLYPH MATRIX STUDIO",
     status: "Testování právě probíhá",
     titleFirst: "Tvůj Glyph Matrix.",
@@ -87,6 +94,12 @@ const content = {
   en: {
     navProject: "Another project by Rendi Studio",
     navBeta: "Closed beta",
+    demoNav: "Download DEMO",
+    demoTag: "FREE HANDS-ON DEMO",
+    demoTitle: "Try GlyphFlow DEMO on your Nothing Phone.",
+    demoDescription: "A separate, limited edition. Create 13 × 13 pixel art and animations, try sample scrolling text, and test the basic equalizer on Glyph Matrix. Advanced features are reserved for the full app.",
+    demoImportant: "Installing the demo does not enroll you in the closed beta. Full access is available only to approved testers at this stage.",
+    demoBetaLink: "Apply for closed beta",
     eyebrow: "INDEPENDENT GLYPH MATRIX STUDIO",
     status: "Closed beta is live",
     titleFirst: "Your Glyph Matrix.",
@@ -230,7 +243,7 @@ export default function GlyphFlowLanding({ lang }: { lang: Language }) {
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[#b5cbd0] md:text-xl">{t.lead}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a href={registration} className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#42e1d0] px-7 py-3 font-bold text-[#05201d] transition hover:bg-[#95fff0] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#42e1d0]">{t.ctaPrimary} <span aria-hidden="true" className="ml-3">↗</span></a>
-              <a href="#features" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[#355459] px-7 py-3 font-semibold text-[#e5faf8] transition hover:bg-[#183038] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#42e1d0]">{t.ctaSecondary}</a>
+              <a href="#demo" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[#355459] px-7 py-3 font-semibold text-[#e5faf8] transition hover:bg-[#183038] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#42e1d0]">{t.demoNav}</a>
             </div>
             <p className="mt-4 text-sm text-[#88a7ac]">{t.ctaHelper}</p>
             <div className="mt-10 flex flex-wrap gap-2">
@@ -238,6 +251,19 @@ export default function GlyphFlowLanding({ lang }: { lang: Language }) {
             </div>
           </div>
           <HeroPreview lang={lang} />
+        </div>
+      </section>
+
+      <section id="demo" aria-labelledby="glyphflow-demo-title" className="border-t border-[#1a3439] bg-[#09171d] px-5 py-16 md:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 rounded-[28px] border border-[#286f66] bg-gradient-to-br from-[#12342f] to-[#0f1d26] p-7 md:grid-cols-[1.3fr_.7fr] md:p-10">
+          <div>
+            <p className="text-xs font-bold tracking-[.18em] text-[#6af2dc]">{t.demoTag}</p>
+            <h2 id="glyphflow-demo-title" className="mt-3 text-2xl font-black md:text-3xl">{t.demoTitle}</h2>
+            <p className="mt-4 max-w-2xl leading-relaxed text-[#b6d5d3]">{t.demoDescription}</p>
+            <p className="mt-4 text-sm text-[#8cb8b7]">{t.demoImportant}</p>
+            <a href={registration} className="mt-5 inline-block text-sm font-bold text-[#7ceede] underline underline-offset-4 hover:text-white">{t.demoBetaLink}</a>
+          </div>
+          <GlyphFlowDemoDownload lang={lang} />
         </div>
       </section>
 
