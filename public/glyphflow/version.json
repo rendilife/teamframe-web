@@ -1,15 +1,17 @@
 {
-  "version": "2026.11.22-secure.10",
+  "version": "2026.11.22-secure.10-r20261122-122957-753711",
   "package": "SEKTOR_NULA.zip",
-  "sha256": "880db6558a15fe7c3acd6453115018cf87c609be7452df5bb2013f4f23f7ac42",
-  "size": 35958834,
+  "sha256": "88046c7ac98c2385a546084038f9810318f0783c24f8d0447376b8a12dda6085",
+  "size": 35967943,
   "url": "https://teamframe.cz/glyphflow/SEKTOR_NULA.zip",
   "manifest_url": "https://teamframe.cz/glyphflow/version.json",
   "release_notes": "M5-M7: audited economy/progression, planetary generation and climate rules, vehicle operation, construction/topology/refunds now native. 390 whole source functions plus 3 protected mixed functions. Audited B presentation remains GDScript. Release requires matching actual artifact, GUI and launcher evidence; no public upload.",
-  "build_id": "20261122-094058-192066",
+  "build_id": "20261122-122957-753711",
   "engine": "Godot 4.7.2",
   "architecture": "Windows x64",
   "source_snapshot_sha256": "e17473642459f4c5f0841179d5d36742c3c48cc104803bbefed90dd881433754",
   "security_status": "APPROVED",
-  "public_distribution_allowed": true
+  "public_distribution_allowed": true,
+  "approval_policy": "automated",
+  "manual_gameplay_verified": false
 }
