@@ -5,7 +5,7 @@
   "size": 35967960,
   "url": "https://teamframe.cz/glyphflow/SEKTOR_NULA.zip",
   "manifest_url": "https://teamframe.cz/glyphflow/version.json",
-  "release_notes": "M5-M7: audited economy/progression, planetary generation and climate rules, vehicle operation, construction/topology/refunds now native. 390 whole source functions plus 3 protected mixed functions. Audited B presentation remains GDScript. Release requires matching actual artifact, GUI and launcher evidence; no public upload.",
+  "release_notes": "Opraveno doplňování kyslíku do skafandru v obytných modulech. Další opravy a vylepšení hry SEKTOR NULA.",
   "build_id": "20261122-132737-1b4331",
   "engine": "Godot 4.7.2",
   "architecture": "Windows x64",
