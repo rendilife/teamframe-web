@@ -1,0 +1,11 @@
+{
+  "version": "3.2.0",
+  "package": "https://teamframe.cz/sektor_nula/SEKTOR_NULA_Launcher.zip",
+  "size": 2137767,
+  "sha256": "aa8ed3a601755f31a902cebecaa1261052f4a716174bd8527bedc3edcb7dd7dc",
+  "security_status": "APPROVED",
+  "changes": [
+    "Přesun aktualizace hry na hlavní tlačítko",
+    "Samostatná aktualizace launcheru s UAC a automatickým restartem"
+  ]
+}
