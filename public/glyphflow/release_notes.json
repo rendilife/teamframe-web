@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "releases": [
+    {
+      "version": "2026.11.28-integrated.1-r20261128-120457-5a0abf",
+      "build_id": "20261128-120457-5a0abf",
+      "date": "2026-11-28",
+      "channel": "stable",
+      "status": "published",
+      "security_status": "APPROVED",
+      "update_type": "Integrace dokončených oprav",
+      "features": [
+        "Čtyřkolka 0–60 km, LED, náklad MK1–MK4, baterie, crafter, rámy a opravná sada",
+        "Dokončená podpora vrtu T2"
+      ],
+      "fixes": [
+        "ALFA01: bezpečná obnova vozidla a existujících modulů",
+        "Skutečné nabíjení a solár bez chybějícího klíče energy",
+        "Smrt v kabině: náklad a bezpečný overflow bez fyzické bedny; ověřený výběr respawnu",
+        "Odolnější atomický zápis reportů ve Windows"
+      ],
+      "optimizations": [],
+      "known_issues": [],
+      "sha256": "91f180be14b9bef1db0454392ef7335ae64b51b32c1447c502eed07af8d19102",
+      "size": 36738360
+    }
+  ]
+}
