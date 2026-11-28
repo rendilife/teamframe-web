@@ -1,0 +1,13 @@
+{
+  "releases": [
+    {
+      "version": "2026.11.22-secure.10-r20261122-132737-1b4331",
+      "build_id": "20261122-132737-1b4331",
+      "date": "2026-11-22",
+      "release_notes": [
+        "Opraveno doplňování kyslíku do skafandru v obytných modulech.",
+        "Další opravy a vylepšení hry SEKTOR NULA."
+      ]
+    }
+  ]
+}
